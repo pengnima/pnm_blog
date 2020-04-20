@@ -1,0 +1,178 @@
+@charset "UTF-8";
+/*
+  ===================== 博客头(导航栏 + 名字) =========================
+*/
+.blog_header {
+  background-color: #3d4450cc;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
+  padding-right: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+/*
+  =============================================================
+*/
+/* ===================== 名字 ========================= */
+.blog_title span {
+  display: block;
+  position: relative;
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.blog_title span::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #32cdc5;
+  -webkit-animation: titleTranslate 6s infinite alternate;
+          animation: titleTranslate 6s infinite alternate;
+}
+
+@-webkit-keyframes titleTranslate {
+  0% {
+    -webkit-clip-path: circle(30px at -30px 50%);
+            clip-path: circle(30px at -30px 50%);
+  }
+  100% {
+    -webkit-clip-path: circle(30px at 120px 50%);
+            clip-path: circle(30px at 120px 50%);
+  }
+}
+
+@keyframes titleTranslate {
+  0% {
+    -webkit-clip-path: circle(30px at -30px 50%);
+            clip-path: circle(30px at -30px 50%);
+  }
+  100% {
+    -webkit-clip-path: circle(30px at 120px 50%);
+            clip-path: circle(30px at 120px 50%);
+  }
+}
+
+/* ========================================================== */
+/* ===================== 显示nav的按钮样式 ========================= */
+.nav_button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  color: white;
+  font-size: 24px;
+}
+
+.nav_button:hover {
+  background-color: #aaa;
+  cursor: pointer;
+}
+
+/* ========================================================== */
+/* ==================== 导航栏 =============================== */
+.nav_bar {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  a 的默认样式
+*/
+a {
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav_item {
+  position: relative;
+  transition: background-color 0.5s;
+  /* 子目标变化 */
+}
+
+.nav_item .nav_mask {
+  position: absolute;
+  overflow: hidden;
+  background-color: #3d4450;
+  box-shadow: 1px 1px 3px #3d4450;
+  width: 150%;
+  height: 0px;
+  transition: height 0.5s;
+}
+
+.nav_item .nav_mask a {
+  font-size: 12.8px;
+  color: #aaa;
+}
+
+.nav_item .nav_mask a:hover {
+  background-color: #a064f0;
+  color: white;
+}
+
+.nav_item:hover > a {
+  background-color: #009bff;
+}
+
+.nav_item:hover .nav_mask {
+  height: 120px;
+}
+
+/* ========================================================== */
+/* ============== 768宽度以内 改变 博客头的弹性盒子方向 ============= */
+@media screen and (max-width: 768px) {
+  .collapse.blog_header {
+    flex-direction: column;
+  }
+}
+
+/* ================ 480宽度以内 显示按钮且修改title样式 和 导航栏样式 ======== */
+@media screen and (max-width: 480px) {
+  .title_collapse.blog_title {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  }
+  .title_collapse.blog_title .nav_button {
+    display: block;
+  }
+  .blog_header {
+    padding: 0;
+    margin: 0;
+  }
+  .nav_collapse.nav_bar {
+    display: block;
+    margin-top: 2px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 0px;
+    max-height: 210px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    transition: height 0.5s;
+  }
+  .nav_collapse.nav_bar .nav_item {
+    width: 100%;
+  }
+  .nav_collapse.nav_bar .nav_item .nav_mask {
+    position: static;
+  }
+  .nav_collapse.nav_bar.nav_show {
+    height: 210px;
+  }
+}

@@ -1,0 +1,172 @@
+$font_size: 16px !default;
+$nav_item_high: 42px;
+$nav_mask_high: 40px;
+$nav_item_length: 5;
+
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+
+/*
+  ===================== 博客头(导航栏 + 名字) =========================
+*/
+.blog_header {
+  background-color: #3d4450cc;
+  box-shadow: 0 4px 5px rgba($color: #000000, $alpha: 0.6);
+  padding-right: 180px;
+  display: flex;
+  justify-content: center;
+}
+/*
+  =============================================================
+*/
+
+/* ===================== 名字 ========================= */
+.blog_title span {
+  display: block;
+  position: relative;
+  font-size: $font_size * 2;
+  color: rgba($color: #000000, $alpha: 0.1);
+  text-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+  &::after {
+    content: attr(data-title);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(50, 205, 197);
+    animation: titleTranslate 6s infinite alternate;
+  }
+}
+@keyframes titleTranslate {
+  0% {
+    clip-path: circle(30px at -30px 50%);
+  }
+  100% {
+    clip-path: circle(30px at 120px 50%);
+  }
+}
+/* ========================================================== */
+
+/* ===================== 显示nav的按钮样式 ========================= */
+.nav_button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  color: white;
+  font-size: $font_size * 1.5;
+
+  &:hover {
+    background-color: #aaa;
+    cursor: pointer;
+  }
+}
+/* ========================================================== */
+
+/* ==================== 导航栏 =============================== */
+.nav_bar {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  a 的默认样式
+*/
+a {
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: $font_size;
+  color: white;
+  cursor: pointer;
+}
+
+.nav_item {
+  position: relative;
+  transition: background-color 0.5s;
+
+  .nav_mask {
+    position: absolute;
+    overflow: hidden;
+    background-color: #3d4450;
+    box-shadow: 1px 1px 3px #3d4450;
+    width: 150%;
+    height: 0px;
+
+    transition: height 0.5s;
+
+    a {
+      font-size: $font_size * 0.8;
+      color: #aaa;
+
+      &:hover {
+        background-color: rgb(160, 100, 240);
+        color: white;
+      }
+    }
+  }
+  &:hover > a {
+    background-color: rgb(0, 155, 255);
+  }
+  /* 子目标变化 */
+  &:hover .nav_mask {
+    height: $nav_mask_high * 3;
+  }
+}
+/* ========================================================== */
+
+/* ============== 768宽度以内 改变 博客头的弹性盒子方向 ============= */
+@media screen and (max-width: $screen-sm) {
+  .collapse.blog_header {
+    flex-direction: column;
+  }
+}
+/* ================ 480宽度以内 显示按钮且修改title样式 和 导航栏样式 ======== */
+@media screen and (max-width: $screen-xs) {
+  .title_collapse.blog_title {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  }
+  .title_collapse.blog_title .nav_button {
+    display: block;
+  }
+
+  .blog_header {
+    padding: 0;
+    margin: 0;
+  }
+  .nav_collapse.nav_bar {
+    display: block;
+    margin-top: 2px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    height: 0px;
+    max-height: $nav_item_high * $nav_item_length;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    transition: height 0.5s;
+    .nav_item {
+      width: 100%;
+
+      .nav_mask {
+        position: static;
+      }
+    }
+    &.nav_show {
+      height: $nav_item_high * $nav_item_length;
+    }
+  }
+}
