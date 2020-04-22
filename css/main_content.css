@@ -1,0 +1,154 @@
+@charset "UTF-8";
+#main_body {
+  padding-top: 20px;
+}
+
+.main_content {
+  width: 65%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: -32px;
+}
+
+@media screen and (max-width: 768px) {
+  #main_body .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.wrap {
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.5s;
+  margin-bottom: 40px;
+}
+
+.wrap:hover {
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.notice {
+  /* 断单词句 */
+  word-wrap: break-word;
+}
+
+.blog {
+  position: relative;
+}
+
+.date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: translate(-20%, -40%);
+          transform: translate(-20%, -40%);
+  border-radius: 50%;
+  background-color: #6b69d6;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.date .month {
+  font-size: 9.6px;
+}
+
+.date .day {
+  font-size: 25.6px;
+  font-weight: bold;
+}
+
+.blog_head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blog_head .title {
+  font-size: 32px;
+  background-color: #50cdff;
+  color: white;
+  border-radius: 6px;
+}
+
+.blog_head i {
+  margin-top: 10px;
+  font-size: 12.8px;
+  background-color: #666;
+  color: white;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.blog_body {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.blog_body .info {
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  vertical-align: middle;
+  /* 让图片和文字对齐了,让图片不会留出一点小缝 */
+}
+
+.detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  height: 100%;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+  word-wrap: break-word;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  visibility: hidden;
+  opacity: 0;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(1, 0.08, 1, 1);
+}
+
+.info:hover .image {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.info:hover .detail {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}

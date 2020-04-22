@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My博客</title>
+
+    <link
+      href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/scroll.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/background.css" />
+    <link rel="stylesheet" href="./css/main_content.css" />
+    <link rel="stylesheet" href="./css/main_aside.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #888;
+
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <header class="blog_header">
+      <div class="container">
+        <div class="blog_title">
+          <span data-title="彭尼玛">彭尼玛</span>
+          <button class="nav_button">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <ul class="nav_bar">
+          <li class="nav_item">
+            <a href="https://www.baidu.com">
+              <i class="fa fa-home"></i>
+              <span>首页</span>
+            </a>
+          </li>
+          <li class="nav_item">
+            <a href="javascript:;">
+              <i class="fa fa-book"></i>
+              <span>学习资料</span>
+            </a>
+            <div class="nav_mask">
+              <a href="javascript:;">网络</a>
+              <a href="javascript:;">算法</a>
+              <a href="javascript:;">其他</a>
+            </div>
+          </li>
+          <li class="nav_item">
+            <a href="https://www.bilibili.com">
+              <i class="fa fa-bookmark"></i>
+              <span>项目演示</span>
+            </a>
+          </li>
+          <li class="nav_item">
+            <a href="https://www.bilibili.com">
+              <i class="fa fa-envelope"></i>
+              <span>留言板</span>
+            </a>
+          </li>
+          <li class="nav_item">
+            <a href="https://www.bilibili.com">
+              <i class="fa fa-star"></i>
+              <span>占位</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- 背景图循环 -->
+    <section class="bg_collapse">
+      <ul class="bg_total">
+        <li>
+          <span class="bg_slider"></span>
+        </li>
+        <li>
+          <span class="bg_slider"></span>
+        </li>
+        <li>
+          <span class="bg_slider"></span>
+        </li>
+        <li>
+          <span class="bg_slider"></span>
+        </li>
+        <li>
+          <span class="bg_slider"></span>
+        </li>
+      </ul>
+    </section>
+    <!-- 内容及侧边栏 -->
+    <div id="main_body">
+      <div class="container">
+        <div class="main_content">
+          <!-- 内容--公告 -->
+          <div class="wrap notice">
+            <p>
+              注意：该博客思路来自https://beats0.github.io/www.mygalgame.com/，很喜欢原作者的一些设计(比如右键🐍图)，咳咳~
+            </p>
+            <p>该博客github源码地址：xxxxxxxxxx</p>
+            <br />
+            <br />
+          </div>
+          <div class="blog wrap">
+            <div class="date">
+              <span class="month"></span>
+              <span class="day"></span>
+            </div>
+            <div class="blog_head">
+              <a href="" target="blank">
+                <span class="title"></span>
+              </a>
+              <i class="fa fa-tags">
+                <span class="tags"></span>
+              </i>
+            </div>
+            <div class="blog_body wrap">
+              <div class="info">
+                <a href="javascript:;" target="_blank">
+                  <img class="image" src="./img/lazy.jpg" alt="懒" />
+                  <div class="detail"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main_aside">
+          <!-- 侧边栏 -->
+          <aside class="search">
+            <input class="search_content" type="text" placeholder="" />
+            <div class="sure_btn">
+              <i class="fa fa-search"></i>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="./js/btnClick.js" type="module"></script>
+    <script src="./js/loopAnimation.js" type="module"></script>
+    <script src="./js/createBlog.js"></script>
+  </body>
+</html>
+
+<!--           
+  <div class="blog wrap">
+            <div class="date">
+              <span class="month">4月</span>
+              <span class="day">20</span>
+            </div>
+            <div class="blog_head">
+              <a href="https://www.cnblogs.com/pengnima/p/12660295.html" target="blank">
+                <span class="title">常见网络面试题</span>
+              </a>
+              <i class="fa fa-tags">
+                <span class="tags">面试题 网络</span>
+              </i>
+            </div>
+            <div class="blog_body wrap">
+              <div class="info">
+                <a href="https://www.cnblogs.com/pengnima/p/12660295.html" target="_blank">
+                  <img class="image" src="./img/bg_h4.jpg" alt="网络面试题" />
+                  <div class="detail">
+                    目录 "常考面试题" "1. Post 和 Get 的区别？" "2. TLS/SSL
+                    中什么一定要用三个随机数，来生成"会话密钥"？" "3. SSL 连接断开后如何恢复？" "4.
+                    RSA 算法的安全性保障？" "5. DNS 为什么使用 UDP 协议作为传输层协议？" "6.
+                    当你在浏览器中输……
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+ -->

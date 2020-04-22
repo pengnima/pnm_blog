@@ -1,0 +1,89 @@
+$font_size: 16px !default;
+
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
+
+.main_aside {
+  flex: 1;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  transition: align-self 0.5s;
+  // 改变container 的默认 侧轴对齐方式
+  align-self: flex-start;
+}
+
+@media screen and (max-width: $screen-sm) {
+  .main_aside {
+    // flex: auto;
+    width: 100%;
+
+    padding-top: 20px;
+    align-self: center;
+    .search {
+      // search嵌套在main_aside里，所以优先级比下面的高10
+      width: 100%;
+    }
+  }
+}
+
+// ====================== 搜索框 =========================================
+.search {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 4px;
+
+  display: flex;
+  animation: searchMove 1.5s;
+}
+@keyframes searchMove {
+  0% {
+    transform: translateY(100px);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.search_content {
+  outline: none;
+  flex: 1;
+  color: #666;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  padding: 4px 10px;
+  border: 1px solid rgb(255, 80, 80);
+  box-shadow: 0 0 6px rgb(255, 80, 80);
+  border-radius: 4px;
+  background-color: transparent;
+}
+.search_content:focus {
+  background-color: white;
+}
+.sure_btn {
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgb(255, 80, 80);
+  border-radius: 4px;
+  transition: background-color 0.5s;
+  cursor: pointer;
+
+  color: white;
+  line-height: 32px;
+  text-align: center;
+}
+.sure_btn:hover {
+  background-color: rgb(253, 42, 42);
+}
+
+// ========================================================================

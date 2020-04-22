@@ -3,11 +3,8 @@
   ===================== 博客头(导航栏 + 名字) =========================
 */
 .blog_header {
-  background-color: #3d4450cc;
+  background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
-  padding-right: 180px;
-  display: flex;
-  justify-content: center;
 }
 
 /*
@@ -88,9 +85,12 @@
 */
 a {
   text-decoration: none;
+  font-size: 16px;
+}
+
+.nav_item a {
   display: block;
   padding: 10px 15px;
-  font-size: 16px;
   color: white;
   cursor: pointer;
 }
@@ -132,30 +132,23 @@ a {
 /* ========================================================== */
 /* ============== 768宽度以内 改变 博客头的弹性盒子方向 ============= */
 @media screen and (max-width: 768px) {
-  .collapse.blog_header {
+  .blog_header .container {
     flex-direction: column;
   }
-}
-
-/* ================ 480宽度以内 显示按钮且修改title样式 和 导航栏样式 ======== */
-@media screen and (max-width: 480px) {
-  .title_collapse.blog_title {
-    padding: 10px;
+  .blog_title {
+    padding: 10px 15px;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 -1px rgba(255, 255, 255, 0.2) inset;
   }
-  .title_collapse.blog_title .nav_button {
+  .blog_title .nav_button {
     display: block;
   }
-  .blog_header {
-    padding: 0;
-    margin: 0;
-  }
-  .nav_collapse.nav_bar {
+  .nav_bar {
     display: block;
-    margin-top: 2px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -166,13 +159,13 @@ a {
     width: 100%;
     transition: height 0.5s;
   }
-  .nav_collapse.nav_bar .nav_item {
+  .nav_bar .nav_item {
     width: 100%;
   }
-  .nav_collapse.nav_bar .nav_item .nav_mask {
+  .nav_bar .nav_item .nav_mask {
     position: static;
   }
-  .nav_collapse.nav_bar.nav_show {
+  .nav_bar.nav_show {
     height: 210px;
   }
 }
