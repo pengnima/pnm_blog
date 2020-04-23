@@ -26,7 +26,7 @@
     </style>
   </head>
   <body>
-    <!-- 导航栏 -->
+    <!-- ~导航栏 -->
     <header class="blog_header">
       <div class="container">
         <div class="blog_title">
@@ -74,7 +74,7 @@
         </ul>
       </div>
     </header>
-    <!-- 背景图循环 -->
+    <!-- ~背景图循环 -->
     <section class="bg_collapse">
       <ul class="bg_total">
         <li>
@@ -94,19 +94,21 @@
         </li>
       </ul>
     </section>
-    <!-- 内容及侧边栏 -->
+    <!-- ~内容及侧边栏 -->
     <div id="main_body">
       <div class="container">
+        <!-- *内容* -->
         <div class="main_content">
           <!-- 内容--公告 -->
           <div class="wrap notice">
             <p>
               注意：该博客思路来自https://beats0.github.io/www.mygalgame.com/，很喜欢原作者的一些设计(比如右键🐍图)，咳咳~
             </p>
-            <p>该博客github源码地址：xxxxxxxxxx</p>
+            <p>该博客github源码地址：https://github.com/pengnima/pnm_blog</p>
             <br />
             <br />
           </div>
+          <!-- 内容--博客 -->
           <div class="blog wrap">
             <div class="date">
               <span class="month"></span>
@@ -129,23 +131,50 @@
               </div>
             </div>
           </div>
+          <!-- 博客结束 -->
+          <div class="blog_page wrap">
+            <!-- 分页 -->
+            <div class="page_icon page_pre fa fa-arrow-left"></div>
+            <div class="page_icon page_next fa fa-arrow-right"></div>
+          </div>
         </div>
+        <!-- *侧边栏* -->
         <div class="main_aside">
-          <!-- 侧边栏 -->
+          <!-- 侧边栏--搜索 -->
           <aside class="search">
             <input class="search_content" type="text" placeholder="" />
             <div class="sure_btn">
               <i class="fa fa-search"></i>
             </div>
           </aside>
+          <!-- 搜索结束 -->
         </div>
       </div>
     </div>
 
-    <!-- 脚本 -->
-    <script src="./js/btnClick.js" type="module"></script>
-    <script src="./js/loopAnimation.js" type="module"></script>
-    <script src="./js/createBlog.js"></script>
+    <!-- ~脚本 -->
+    <script src="./js/btnClick.js"></script>
+    <script src="./js/loopAnimation.js"></script>
+    <script src="./js/createBlog.js" type="module"></script>
+    <script type="module">
+      import page from "./js/Page.js";
+      let $page = document.querySelector(".blog_page.wrap");
+      $page.addEventListener("click", function (e) {
+        let ev = e || window.event;
+        let dom = ev.target;
+
+        if (dom.className.indexOf("fa-arrow-left") != -1) {
+          page.pre();
+          console.log(1);
+        } else if (dom.className.indexOf("fa-arrow-right") != -1) {
+          page.next();
+        } else {
+          if (Number(dom.innerText)) {
+            page.selectPage(dom.innerText);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
 

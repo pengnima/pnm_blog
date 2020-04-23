@@ -1,4 +1,5 @@
-import { $navBtn, $bar } from "./getDom.js";
+let $navBtn = document.querySelector(".nav_button");
+let $bar = document.querySelector(".nav_bar");
 
 // navbar的按钮点击
 $navBtn.addEventListener("click", function () {

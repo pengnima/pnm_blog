@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.is_none {
+  display: none !important;
+}
+
 #main_body {
   padding-top: 20px;
 }
@@ -127,6 +131,8 @@
   padding: 20px;
   height: 100%;
   font-size: 24px;
+  text-indent: 48px;
+  /* 开头空2格 */
   color: rgba(255, 255, 255, 0.8);
   word-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.6);
@@ -151,4 +157,44 @@
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+/* ================================================================================ */
+.blog_page.wrap {
+  padding: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+  height: 40px;
+}
+
+.page_icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 10%;
+  border: 2px solid #813feb;
+  background-color: transparent;
+  margin-left: 6px;
+  cursor: pointer;
+  color: #666;
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.page_icon:hover {
+  background-color: #813feb;
+  color: white;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.page_icon.page_true {
+  background-color: #813feb;
+  color: white;
 }

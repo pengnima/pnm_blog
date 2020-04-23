@@ -1,28 +1,57 @@
-let $blog = document.querySelector(".blog.wrap");
 let $main_content = document.querySelector(".main_content");
+let $blog = document.querySelector(".blog.wrap");
+let $page = document.querySelector(".blog_page.wrap");
+import page from "./Page.js";
+(function () {
+  try {
+    // 初始化page类的实例，让其有List
+    page.init().then(() => {
+      //创建 blog 节点
+      for (let i = 1; i < 5; i++) {
+        let tempNode = $blog.cloneNode(true);
+        $main_content.insertBefore(tempNode, $page);
+      }
 
-(async function () {
-  let data = await fetch("./json/blogList.json").then(res => res.json());
-  // console.log(data);
-  // console.log($blog.children);
-  let $date = $blog.children[0];
-  let $head = $blog.children[1];
-  let $body = $blog.children[2];
+      // 给DOM相关的 赋值
+      page.blogDoms = document.querySelectorAll(".blog.wrap");
+      page.pageDoms = $page.children; //因为是引用的，所以后面添加了分页节点，也可以
+      page.changeDom = function () {
+        //添加 blog 数据(添加 5个)
+        for (let i = 0; i < page.blogDoms.length; ++i) {
+          page.blogDoms[i].className = "blog wrap";
+          let j = (page.currentPage - 1) * 5 + i;
+          if (j < page.blen) {
+            let temp = page.blogList[j];
 
-  for (let i = 1; i < 5; i++) {
-    let tempNode = $blog.cloneNode(true);
-    UpDate(tempNode.children[0], parseInt(data[i].date));
-    UpHead(tempNode.children[1], data[i].link, data[i].title, data[i].tags);
-    UpBody(tempNode.children[2], data[i].link, data[i].img, data[i].detail);
+            UpDate(page.blogDoms[i].children[0], parseInt(temp.date));
+            UpHead(page.blogDoms[i].children[1], temp.link, temp.title, temp.tags);
+            UpBody(page.blogDoms[i].children[2], temp.link, temp.img, temp.detail);
+          } else {
+            // 让 不存在的 blog 消失
+            page.blogDoms[i].className = "blog wrap is_none";
+          }
+        }
+      };
 
-    $main_content.appendChild(tempNode);
+      //创建 分页 节点
+      let $nextPage = document.querySelector(".fa-arrow-right");
+      for (let i = 0; i < page.pageCount; ++i) {
+        let text = document.createTextNode(i + 1);
+        let dom = document.createElement("div");
+        dom.setAttribute("class", "page_icon");
+        dom.appendChild(text);
+        $page.insertBefore(dom, $nextPage);
+      }
+
+      //
+      page.changeDom();
+    });
+  } catch (err) {
+    console.log(err);
   }
-
-  UpDate($date, parseInt(data[0].date));
-  UpHead($head, data[0].link, data[0].title, data[0].tags);
-  UpBody($body, data[0].link, data[0].img, data[0].detail);
 })();
 
+// ==============================================================================
 function UpDate(el, num) {
   let m = new Date(num).getMonth() + 1;
   let d = new Date(num).getDate();

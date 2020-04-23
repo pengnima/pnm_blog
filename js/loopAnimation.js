@@ -1,5 +1,4 @@
-import { $input } from "./getDom.js";
-
+let $input = document.querySelector(".search_content");
 // 搜索框 placeholder 变动
 let arr = ["右键无法复制？CV大法呀~", "想搜🐍🐍的？", "那还是百度吧！"];
 let r = 0;
