@@ -63,3 +63,30 @@ body {
     background: url("../img/sm_bg.gif");
   }
 }
+
+/* ======================= 右键背景图 ==============================================*/
+.mask_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(102, 102, 102, 0.6);
+}
+.bg_h {
+  position: relative;
+  width: 260px;
+  height: 260px;
+
+  cursor: none;
+
+  border: 4px solid #ccc;
+  box-shadow: 0 0 10px #222;
+  border-radius: 50%;
+
+  background-image: none;
+  background-size: contain;
+  background-repeat: repeat;
+  background-attachment: fixed; /* 有了该属性，底下的图片就不会随着父元素的移动而移动，也不会随着滚动条滚动而滚动 */
+}

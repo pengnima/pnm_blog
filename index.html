@@ -152,58 +152,44 @@
       </div>
     </div>
 
+    <!-- ~右键背景图 -->
+    <div class="mask_bg is_none">
+      <div class="bg_h"></div>
+    </div>
+
     <!-- ~脚本 -->
-    <script src="./js/btnClick.js"></script>
     <script src="./js/loopAnimation.js"></script>
     <script src="./js/createBlog.js" type="module"></script>
-    <script type="module">
-      import page from "./js/Page.js";
-      let $page = document.querySelector(".blog_page.wrap");
-      $page.addEventListener("click", function (e) {
-        let ev = e || window.event;
-        let dom = ev.target;
+    <script src="./js/btnClick.js" type="module"></script>
 
-        if (dom.className.indexOf("fa-arrow-left") != -1) {
-          page.pre();
-          console.log(1);
-        } else if (dom.className.indexOf("fa-arrow-right") != -1) {
-          page.next();
+    <script type="module">
+      // 右键色图
+      let $mask = document.querySelector(".mask_bg");
+      let $bg_h = document.querySelector(".bg_h");
+
+      // 随机选择图片
+      let num = Math.floor(Math.random() * 4 + 1);
+      $bg_h.style.backgroundImage = `url('./img/h_img/bg_h${num}.jpg')`;
+
+      document.oncontextmenu = function (e) {
+        // 一开始便将其定位在鼠标位置
+        let ev = e || window.event;
+        $bg_h.style.top = ev.clientY - 130 + "px";
+        $bg_h.style.left = ev.clientX - 130 + "px";
+
+        if ($mask.className == "mask_bg is_none") {
+          $mask.className = "mask_bg";
         } else {
-          if (Number(dom.innerText)) {
-            page.selectPage(dom.innerText);
-          }
+          $mask.className = "mask_bg is_none";
         }
-      });
+        return false; //禁止默认事件
+      };
+
+      $mask.onmousemove = function (e) {
+        let ev = e || window.event;
+        $bg_h.style.top = ev.clientY - 130 + "px";
+        $bg_h.style.left = ev.clientX - 130 + "px";
+      };
     </script>
   </body>
 </html>
-
-<!--           
-  <div class="blog wrap">
-            <div class="date">
-              <span class="month">4月</span>
-              <span class="day">20</span>
-            </div>
-            <div class="blog_head">
-              <a href="https://www.cnblogs.com/pengnima/p/12660295.html" target="blank">
-                <span class="title">常见网络面试题</span>
-              </a>
-              <i class="fa fa-tags">
-                <span class="tags">面试题 网络</span>
-              </i>
-            </div>
-            <div class="blog_body wrap">
-              <div class="info">
-                <a href="https://www.cnblogs.com/pengnima/p/12660295.html" target="_blank">
-                  <img class="image" src="./img/bg_h4.jpg" alt="网络面试题" />
-                  <div class="detail">
-                    目录 "常考面试题" "1. Post 和 Get 的区别？" "2. TLS/SSL
-                    中什么一定要用三个随机数，来生成"会话密钥"？" "3. SSL 连接断开后如何恢复？" "4.
-                    RSA 算法的安全性保障？" "5. DNS 为什么使用 UDP 协议作为传输层协议？" "6.
-                    当你在浏览器中输……
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
- -->
