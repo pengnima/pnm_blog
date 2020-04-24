@@ -1,25 +1,33 @@
 let $main_content = document.querySelector(".main_content");
 let $blog = document.querySelector(".blog.wrap");
 let $page = document.querySelector(".blog_page.wrap");
+let $newBlogs = document.querySelectorAll(".newblog");
+
 import page from "./Page.js";
 (function () {
   try {
     // 初始化page类的实例，让其有List
     page.init().then(() => {
-      //创建 blog 节点
+      //1. 创建 blog 节点
       for (let i = 1; i < 5; i++) {
         let tempNode = $blog.cloneNode(true);
         $main_content.insertBefore(tempNode, $page);
       }
 
-      // 给DOM相关的 赋值
+      // 2. 给DOM相关的 赋值
       page.blogDoms = document.querySelectorAll(".blog.wrap");
       page.pageDoms = $page.children; //因为是引用的，所以后面添加了分页节点，也可以
       page.changeDom = function () {
+        //先获取一次 当前页
+        let m = page.currentPage;
+
         //添加 blog 数据(添加 5个)
+        if (m !== undefined) {
+          page.pageDoms[m].className = "page_icon page_true";
+        }
         for (let i = 0; i < page.blogDoms.length; ++i) {
           page.blogDoms[i].className = "blog wrap";
-          let j = (page.currentPage - 1) * 5 + i;
+          let j = (m - 1) * 5 + i;
           if (j < page.blen) {
             let temp = page.blogList[j];
 
@@ -33,7 +41,7 @@ import page from "./Page.js";
         }
       };
 
-      //创建 分页 节点
+      //3. 创建 分页 节点
       let $nextPage = document.querySelector(".fa-arrow-right");
       for (let i = 0; i < page.pageCount; ++i) {
         let text = document.createTextNode(i + 1);
@@ -43,8 +51,20 @@ import page from "./Page.js";
         $page.insertBefore(dom, $nextPage);
       }
 
-      //
+      //4. 执行添加blog数据的函数
       page.changeDom();
+
+      //5. 执行添加侧边栏数据的函数
+      for (let i = 0; i < 5; ++i) {
+        $newBlogs[i].children[0].children[0].href = page.blogList[i].link;
+        $newBlogs[i].children[0].children[0].innerText = page.blogList[i].title;
+
+        let dates = new Date(parseInt(page.blogList[i].date)).toLocaleDateString().split("/");
+        dates[1] = dates[1] < 10 ? "0" + dates[1] : dates[1];
+        dates[2] = dates[2] < 10 ? "0" + dates[2] : dates[2];
+
+        $newBlogs[i].children[1].innerText = dates.join("-");
+      }
     });
   } catch (err) {
     console.log(err);

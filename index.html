@@ -99,7 +99,7 @@
       <div class="container">
         <!-- *内容* -->
         <div class="main_content">
-          <!-- 内容--公告 -->
+          <!-- 内容==公告 -->
           <div class="wrap notice">
             <p>
               注意：该博客思路来自https://beats0.github.io/www.mygalgame.com/，很喜欢原作者的一些设计(比如右键🐍图)，咳咳~
@@ -108,7 +108,7 @@
             <br />
             <br />
           </div>
-          <!-- 内容--博客 -->
+          <!-- 内容==博客 -->
           <div class="blog wrap">
             <div class="date">
               <span class="month"></span>
@@ -133,14 +133,14 @@
           </div>
           <!-- 博客结束 -->
           <div class="blog_page wrap">
-            <!-- 分页 -->
+            <!-- 内容==分页 -->
             <div class="page_icon page_pre fa fa-arrow-left"></div>
             <div class="page_icon page_next fa fa-arrow-right"></div>
           </div>
         </div>
         <!-- *侧边栏* -->
         <div class="main_aside">
-          <!-- 侧边栏--搜索 -->
+          <!-- 侧边栏==搜索 -->
           <aside class="search">
             <input class="search_content" type="text" placeholder="" />
             <div class="sure_btn">
@@ -148,6 +148,104 @@
             </div>
           </aside>
           <!-- 搜索结束 -->
+          <!-- 侧边栏==登录 -->
+          <aside class="login_frame pnm_frame">
+            <div class="frame_head">
+              <span>登录面板</span>
+              <div class="aside_icon">
+                <i class="fa fa-chevron-circle-up"></i>
+                <i class="fa fa-times-circle"></i>
+              </div>
+            </div>
+            <div class="frame_body">
+              <form action="" method="post">
+                <label>
+                  <i class="fa fa-user"></i>
+                  <input type="text" />
+                </label>
+                <label>
+                  <i class="fa fa-lock"></i>
+                  <input type="password" name="" />
+                </label>
+                <div class="tips">
+                  <label>
+                    <input type="checkbox" name="remember" />
+                    记住密码
+                  </label>
+                  <a href="javascript:;">忘记密码?</a>
+                </div>
+                <div class="l_a_s">
+                  <button type="submit">登录</button>
+                  <a href="">注册</a>
+                </div>
+              </form>
+            </div>
+          </aside>
+          <!-- 登录结束 -->
+
+          <!-- 侧边栏==最新博客 -->
+          <aside class="newblog_frame pnm_frame">
+            <div class="frame_head">
+              <span>
+                <i class="fa fa-wpforms"></i>
+                最新博客
+              </span>
+              <div class="aside_icon">
+                <i class="fa fa-chevron-circle-up"></i>
+                <i class="fa fa-times-circle"></i>
+              </div>
+            </div>
+            <div class="frame_body">
+              <div class="newblog">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="newblog">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="newblog">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="newblog">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="newblog">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+            </div>
+          </aside>
+
+          <aside class="comment_frame pnm_frame">
+            <div class="frame_head">
+              <span>
+                <i class="fa fa-comments"></i>
+                留言
+              </span>
+              <div class="aside_icon">
+                <i class="fa fa-chevron-circle-up"></i>
+                <i class="fa fa-times-circle"></i>
+              </div>
+            </div>
+            <div class="frame_body"></div>
+          </aside>
+
+          <aside class="randomblog_frame pnm_frame">
+            <div class="frame_head">
+              <span>
+                <i class="fa fa-repeat"></i>
+                随机博客
+              </span>
+              <div class="aside_icon">
+                <i class="fa fa-chevron-circle-up"></i>
+                <i class="fa fa-times-circle"></i>
+              </div>
+            </div>
+            <div class="frame_body"></div>
+          </aside>
         </div>
       </div>
     </div>
@@ -156,40 +254,20 @@
     <div class="mask_bg is_none">
       <div class="bg_h"></div>
     </div>
+    <div class="menu">
+      <a href="javascript:;" class="menu_icon">首页</a>
+      <a href="javascript:;" class="menu_icon">下一页</a>
+      <a href="javascript:;" class="menu_icon">项目</a>
+      <a href="javascript:;" class="menu_icon">留言</a>
+      <a href="javascript:;" class="menu_icon">资料</a>
+      <a href="javascript:;" class="menu_icon">上一页</a>
+    </div>
 
     <!-- ~脚本 -->
-    <script src="./js/loopAnimation.js"></script>
     <script src="./js/createBlog.js" type="module"></script>
     <script src="./js/btnClick.js" type="module"></script>
+    <script src="./js/loopAnimation.js"></script>
 
-    <script type="module">
-      // 右键色图
-      let $mask = document.querySelector(".mask_bg");
-      let $bg_h = document.querySelector(".bg_h");
-
-      // 随机选择图片
-      let num = Math.floor(Math.random() * 4 + 1);
-      $bg_h.style.backgroundImage = `url('./img/h_img/bg_h${num}.jpg')`;
-
-      document.oncontextmenu = function (e) {
-        // 一开始便将其定位在鼠标位置
-        let ev = e || window.event;
-        $bg_h.style.top = ev.clientY - 130 + "px";
-        $bg_h.style.left = ev.clientX - 130 + "px";
-
-        if ($mask.className == "mask_bg is_none") {
-          $mask.className = "mask_bg";
-        } else {
-          $mask.className = "mask_bg is_none";
-        }
-        return false; //禁止默认事件
-      };
-
-      $mask.onmousemove = function (e) {
-        let ev = e || window.event;
-        $bg_h.style.top = ev.clientY - 130 + "px";
-        $bg_h.style.left = ev.clientX - 130 + "px";
-      };
-    </script>
+    <script type="module"></script>
   </body>
 </html>

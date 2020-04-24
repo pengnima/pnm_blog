@@ -9,7 +9,7 @@ $screen-lg: 1200px !default;
 
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 .container {
   @media screen and (min-width: $screen-sm) {

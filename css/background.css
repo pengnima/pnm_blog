@@ -301,3 +301,107 @@ body {
   background-attachment: fixed;
   /* 有了该属性，底下的图片就不会随着父元素的移动而移动，也不会随着滚动条滚动而滚动 */
 }
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: rotate(0) scale(0.1);
+          transform: rotate(0) scale(0.1);
+  transition-property: opacity, visibility, -webkit-transform;
+  transition-property: transform, opacity, visibility;
+  transition-property: transform, opacity, visibility, -webkit-transform;
+  transition-duration: 0.5s;
+}
+
+.menu a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  border: 2px solid #dc965a;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: #dc965a 1px 0 0, #dc965a 0 1px 0, #dc965a -1px 0 0, #dc965a 0 -1px 0;
+  box-shadow: 0 0 20px white;
+}
+
+.menu a:hover {
+  text-shadow: #66ccff 1px 0 0, #66ccff 0 1px 0, #66ccff -1px 0 0, #66ccff 0 -1px 0;
+  box-shadow: inset 0 0 80px white;
+}
+
+.menu.open {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: rotate(360deg) scale(1);
+          transform: rotate(360deg) scale(1);
+}
+
+.menu a:nth-child(1) {
+  background-image: url("../img/menu/1.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(2) {
+  background-image: url("../img/menu/2.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(3) {
+  background-image: url("../img/menu/3.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(4) {
+  background-image: url("../img/menu/4.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(5) {
+  background-image: url("../img/menu/5.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(6) {
+  background-image: url("../img/menu/6.jpg");
+  background-size: contain;
+}
+
+.menu a:nth-child(1) {
+  left: 110px;
+  top: 0;
+}
+
+.menu a:nth-child(2) {
+  left: 200px;
+  top: 60px;
+}
+
+.menu a:nth-child(3) {
+  left: 200px;
+  top: 160px;
+}
+
+.menu a:nth-child(4) {
+  left: 110px;
+  top: 220px;
+}
+
+.menu a:nth-child(5) {
+  left: 20px;
+  top: 160px;
+}
+
+.menu a:nth-child(6) {
+  left: 20px;
+  top: 60px;
+}

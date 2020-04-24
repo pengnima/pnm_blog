@@ -3,6 +3,7 @@ $font_size: 16px !default;
 $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
+$bc-color: rgb(255, 80, 80);
 
 .main_aside {
   flex: 1;
@@ -11,8 +12,10 @@ $screen-lg: 1200px !default;
   padding-right: 16px;
 
   transition: align-self 0.5s;
-  // 改变container 的默认 侧轴对齐方式
-  align-self: flex-start;
+
+  aside {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: $screen-sm) {
@@ -21,7 +24,6 @@ $screen-lg: 1200px !default;
     width: 100%;
 
     padding-top: 20px;
-    align-self: center;
     .search {
       // search嵌套在main_aside里，所以优先级比下面的高10
       width: 100%;
@@ -61,8 +63,8 @@ $screen-lg: 1200px !default;
   letter-spacing: 1px;
   margin-right: 10px;
   padding: 4px 10px;
-  border: 1px solid rgb(255, 80, 80);
-  box-shadow: 0 0 6px rgb(255, 80, 80);
+  border: 1px solid $bc-color;
+  box-shadow: 0 0 6px $bc-color;
   border-radius: 4px;
   background-color: transparent;
 }
@@ -73,7 +75,7 @@ $screen-lg: 1200px !default;
   align-self: center;
   width: 32px;
   height: 32px;
-  background-color: rgb(255, 80, 80);
+  background-color: $bc-color;
   border-radius: 4px;
   transition: background-color 0.5s;
   cursor: pointer;
@@ -87,3 +89,213 @@ $screen-lg: 1200px !default;
 }
 
 // ========================================================================
+
+.pnm_frame {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 6px;
+  box-shadow: 0 0 5px white;
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0 0 20px black;
+    .frame_head {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .frame_body {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.frame_head {
+  height: 42px;
+
+  padding: 8px 12px;
+  box-sizing: border-box;
+
+  transition: background-color 0.5s;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+  font-size: $font_size * 0.9;
+
+  .aside_icon {
+    cursor: pointer;
+
+    i:hover {
+      color: $bc-color;
+    }
+  }
+}
+
+.frame_body {
+  padding: 30px 12px;
+  border: 1px solid white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: background-color 0.5s;
+  background-color: rgba(255, 255, 255, 0.6);
+
+  transition: max-height 0.5s, padding-bottom 0.5s, padding-top 0.5s;
+  overflow: hidden;
+}
+.login_frame .frame_body {
+  max-height: 200px;
+}
+.newblog_frame .frame_body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0px;
+  max-height: 300px;
+}
+//===============================================================================
+
+//登录
+.frame_body form {
+  display: flex;
+  flex-direction: column;
+
+  & > label {
+    margin-bottom: 10px;
+    display: flex;
+
+    border-radius: 6px;
+    box-shadow: 0 0 5px $bc-color;
+
+    i {
+      width: 40px;
+      height: 32px;
+      text-align: center;
+      line-height: 32px;
+      background-color: $bc-color;
+      color: white;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    input {
+      flex: 1;
+      outline: none;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      border-left: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: $bc-color;
+
+      background-color: rgba(255, 255, 255, 0.6);
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+
+      &:focus {
+        box-shadow: 1px 0 50px rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .tips {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: $font_size * 0.8;
+    font-weight: bolder;
+
+    input {
+      margin: 0;
+      vertical-align: text-bottom;
+    }
+    a {
+      color: black;
+      font-size: inherit;
+    }
+  }
+
+  .l_a_s {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    padding-top: 10px;
+
+    button {
+      outline: none;
+      border: none;
+
+      width: 45%;
+
+      color: white;
+      font-size: $font_size * 0.8;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: $bc-color;
+      }
+    }
+    a {
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: center;
+      width: 45%;
+
+      color: white;
+      font-size: $font_size * 0.8;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: $bc-color;
+      }
+    }
+  }
+}
+
+//=============================================================================
+
+//最新博客
+.newblog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 42px;
+  box-sizing: border-box;
+  padding: 10px;
+
+  border-bottom: 2px solid #ccc;
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0 0 20px #000;
+  }
+
+  span:nth-child(1) {
+    a {
+      font-size: $font_size * 0.8;
+      color: black;
+      &:hover {
+        color: $bc-color;
+      }
+    }
+  }
+  span:nth-child(2) {
+    font-size: $font_size * 0.8;
+    color: white;
+    background-color: $bc-color;
+    padding: 2px;
+    border-radius: 6px;
+  }
+}
+//=============================================================================

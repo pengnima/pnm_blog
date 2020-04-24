@@ -107,8 +107,8 @@ a {
   background-color: #3d4450;
   box-shadow: 1px 1px 3px #3d4450;
   width: 150%;
-  height: 0px;
-  transition: height 0.5s;
+  max-height: 0;
+  transition: max-height 0.5s;
 }
 
 .nav_item .nav_mask a {
@@ -126,7 +126,7 @@ a {
 }
 
 .nav_item:hover .nav_mask {
-  height: 120px;
+  max-height: 200px;
 }
 
 /* ========================================================== */

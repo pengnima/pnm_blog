@@ -3,14 +3,16 @@
   padding-left: 16px;
   padding-right: 16px;
   transition: align-self 0.5s;
-  align-self: flex-start;
+}
+
+.main_aside aside {
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .main_aside {
     width: 100%;
     padding-top: 20px;
-    align-self: center;
   }
   .main_aside .search {
     width: 100%;
@@ -95,4 +97,200 @@
 
 .sure_btn:hover {
   background-color: #fd2a2a;
+}
+
+.pnm_frame {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 0 0 5px white;
+  transition: box-shadow 0.5s;
+}
+
+.pnm_frame:hover {
+  box-shadow: 0 0 20px black;
+}
+
+.pnm_frame:hover .frame_head {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.pnm_frame:hover .frame_body {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.frame_head {
+  height: 42px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  transition: background-color 0.5s;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 14.4px;
+}
+
+.frame_head .aside_icon {
+  cursor: pointer;
+}
+
+.frame_head .aside_icon i:hover {
+  color: #ff5050;
+}
+
+.frame_body {
+  padding: 30px 12px;
+  border: 1px solid white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: background-color 0.5s;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: max-height 0.5s, padding-bottom 0.5s, padding-top 0.5s;
+  overflow: hidden;
+}
+
+.login_frame .frame_body {
+  max-height: 200px;
+}
+
+.newblog_frame .frame_body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0px;
+  max-height: 300px;
+}
+
+.frame_body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.frame_body form > label {
+  margin-bottom: 10px;
+  display: flex;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #ff5050;
+}
+
+.frame_body form > label i {
+  width: 40px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  background-color: #ff5050;
+  color: white;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.frame_body form > label input {
+  flex: 1;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ff5050;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.frame_body form > label input:focus {
+  box-shadow: 1px 0 50px black;
+}
+
+.frame_body form .tips {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.8px;
+  font-weight: bolder;
+}
+
+.frame_body form .tips input {
+  margin: 0;
+  vertical-align: text-bottom;
+}
+
+.frame_body form .tips a {
+  color: black;
+  font-size: inherit;
+}
+
+.frame_body form .l_a_s {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.frame_body form .l_a_s button {
+  outline: none;
+  border: none;
+  width: 45%;
+  color: white;
+  font-size: 12.8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.frame_body form .l_a_s button:hover {
+  background-color: #ff5050;
+}
+
+.frame_body form .l_a_s a {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  width: 45%;
+  color: white;
+  font-size: 12.8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.frame_body form .l_a_s a:hover {
+  background-color: #ff5050;
+}
+
+.newblog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+  transition: box-shadow 0.5s;
+}
+
+.newblog:hover {
+  box-shadow: 0 0 20px #000;
+}
+
+.newblog span:nth-child(1) a {
+  font-size: 12.8px;
+  color: black;
+}
+
+.newblog span:nth-child(1) a:hover {
+  color: #ff5050;
+}
+
+.newblog span:nth-child(2) {
+  font-size: 12.8px;
+  color: white;
+  background-color: #ff5050;
+  padding: 2px;
+  border-radius: 6px;
 }

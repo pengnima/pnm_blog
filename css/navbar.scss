@@ -97,9 +97,9 @@ a {
     background-color: #3d4450;
     box-shadow: 1px 1px 3px #3d4450;
     width: 150%;
-    height: 0px;
+    max-height: 0;
 
-    transition: height 0.5s;
+    transition: max-height 0.5s;
 
     a {
       font-size: $font_size * 0.8;
@@ -116,7 +116,7 @@ a {
   }
   /* 子目标变化 */
   &:hover .nav_mask {
-    height: $nav_mask_high * 3;
+    max-height: 200px;
   }
 }
 /* ========================================================== */

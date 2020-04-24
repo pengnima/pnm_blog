@@ -1,5 +1,13 @@
 /*
   利用类来做分页功能，封装成单独的模块
+
+  分页图标颜色控制：
+      1. true的颜色：
+          调用changeDom()时 【因为如果在其他地方弄，如赋值curr时，则在初始页面无法就没颜色】
+                            【而在 获取curr时调用又不太好】
+      2. false的颜色：
+          回退、前进时 ： pageNumber
+          给currentPage 赋值时。
 */
 class Page {
   constructor() {
@@ -11,6 +19,11 @@ class Page {
     this.changeDom = null; //该方法在 createBlog.js 中实现，会根据 currentPage 改变页面内容
     this.blogDoms = null;
     this.pageDoms = null;
+
+    // pagePop 用来判断是否要将页面 pushState()，如果是回退就不push
+    this.pagePop = false;
+    // 用来改变回退时的分页图标颜色，当为-1时，清空一次所有图标
+    this.pageNumber = -1;
   }
 
   init() {
@@ -39,7 +52,6 @@ class Page {
   pre() {
     if (this.currentPage > 1) {
       --this.currentPage;
-      // history.pushState({}, null, `?page=${--this.currentPage}`);
       this.changeDom();
     }
   }
@@ -48,7 +60,6 @@ class Page {
   next() {
     if (this.currentPage < this.pageCount) {
       ++this.currentPage;
-      // history.pushState({}, null, `?page=${++this.currentPage}`);
       this.changeDom();
     }
   }
@@ -72,17 +83,22 @@ class Page {
   //当前页，控制 页面图标的 背景色
   set currentPage(newPage) {
     if (newPage <= this.pageCount && newPage >= 1) {
-      if (this.pageDoms[this.currentPage]) {
-        this.pageDoms[this.currentPage].className = "page_icon";
+      this.pageNumber = newPage; //回退时用这个属性来 还原图标颜色
+
+      //还原图标颜色
+      if (this.pageDoms[this.getUrlPage]) {
+        this.pageDoms[this.getUrlPage].className = "page_icon";
       }
-      this.pageDoms[newPage].className = "page_icon page_true";
-      history.pushState({}, null, `?page=${newPage}`);
+
+      //添加历史记录
+      if (!this.pagePop) {
+        history.pushState({}, null, `?page=${newPage}`);
+      }
     }
   }
   get currentPage() {
     let page = this.getUrlPage; //先获取网页page
     if (page <= this.pageCount && page >= 1) {
-      this.pageDoms[page].className = "page_icon page_true";
       return page;
     }
   }
