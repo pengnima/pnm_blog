@@ -3,7 +3,7 @@
 
   分页图标颜色控制：
       1. true的颜色：
-          调用changeDom()时 【因为如果在其他地方弄，如赋值curr时，则在初始页面无法就没颜色】
+          调用changeDom(m)时 根据 m 改变【因为如果在其他地方弄，如赋值curr时，则在初始页面无法就没颜色】
                             【而在 获取curr时调用又不太好】
       2. false的颜色：
           回退、前进时 ： pageNumber
@@ -16,7 +16,7 @@ class Page {
     this.pageCount = 0;
 
     // 与Dom相关(切换页面)
-    this.changeDom = null; //该方法在 createBlog.js 中实现，会根据 currentPage 改变页面内容
+    this.changeDom = null; //该方法在 createBlog.js 中实现，会根据传入的 参数 改变页面内容
     this.blogDoms = null;
     this.pageDoms = null;
 
@@ -44,7 +44,7 @@ class Page {
   selectPage(page) {
     if (page <= this.pageCount) {
       this.currentPage = page;
-      this.changeDom();
+      this.changeDom(page);
     }
   }
 
@@ -52,7 +52,7 @@ class Page {
   pre() {
     if (this.currentPage > 1) {
       --this.currentPage;
-      this.changeDom();
+      this.changeDom(this.currentPage);
     }
   }
 
@@ -60,7 +60,7 @@ class Page {
   next() {
     if (this.currentPage < this.pageCount) {
       ++this.currentPage;
-      this.changeDom();
+      this.changeDom(this.currentPage);
     }
   }
 

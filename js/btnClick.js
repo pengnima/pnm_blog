@@ -40,8 +40,9 @@ $page.addEventListener("click", function (e) {
 
 //3. 右键隐藏图============================================================
 // 随机选择图片
-let num = Math.floor(Math.random() * 4 + 1);
-$bg_h.style.backgroundImage = `url('./img/h_img/bg_h${num}.jpg')`;
+let num = Math.floor(Math.random() * 22 + 1);
+let BG_URA_URL = "https://gitee.com/pengnima1/blogimage/raw/master/img/background_ura/";
+$bg_h.style.backgroundImage = `url('${BG_URA_URL}anime(${num}).jpg')`;
 
 document.oncontextmenu = function (e) {
   // 一开始便将其定位在鼠标位置
@@ -99,7 +100,6 @@ $cancle.forEach(item => {
 });
 
 //5. 前进后退 ===============================================================
-
 window.onpopstate = function () {
   page.pagePop = true;
 

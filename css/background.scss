@@ -4,6 +4,9 @@ $screen-xs: 480px !default;
 $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
+$BLOG_IMG_URL: "https://gitee.com/pengnima1/blogimage/raw/master/img/background/";
+$BLOG_IMG_MENU_URL: "https://gitee.com/pengnima1/blogimage/raw/master/img/menu/";
+
 body {
   background-color: #888;
 }
@@ -20,7 +23,7 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("../img/bg#{$i}.jpg");
+      background: url("#{$BLOG_IMG_URL}bg#{$i}.jpg");
       background-attachment: fixed;
       background-size: cover;
       background-position: center center;
@@ -60,7 +63,7 @@ body {
     display: none;
   }
   body {
-    background: url("../img/sm_bg.gif");
+    background: url("#{$BLOG_IMG_URL}sm_bg.gif");
   }
 }
 
@@ -136,7 +139,7 @@ body {
 
 @for $i from 1 through 6 {
   .menu a:nth-child(#{$i}) {
-    background-image: url("../img/menu/#{$i}.jpg");
+    background-image: url("#{$BLOG_IMG_MENU_URL}#{$i}.jpg");
     background-size: contain;
   }
 }

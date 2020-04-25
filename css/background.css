@@ -15,7 +15,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg1.jpg");
+  background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/bg1.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -89,7 +89,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg2.jpg");
+  background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/bg2.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -135,7 +135,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg3.jpg");
+  background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/bg3.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -181,7 +181,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg4.jpg");
+  background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/bg4.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -227,7 +227,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg5.jpg");
+  background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/bg5.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
@@ -272,7 +272,7 @@ body {
     display: none;
   }
   body {
-    background: url("../img/sm_bg.gif");
+    background: url("https://gitee.com/pengnima1/blogimage/raw/master/img/background/sm_bg.gif");
   }
 }
 
@@ -347,32 +347,32 @@ body {
 }
 
 .menu a:nth-child(1) {
-  background-image: url("../img/menu/1.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/1.jpg");
   background-size: contain;
 }
 
 .menu a:nth-child(2) {
-  background-image: url("../img/menu/2.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/2.jpg");
   background-size: contain;
 }
 
 .menu a:nth-child(3) {
-  background-image: url("../img/menu/3.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/3.jpg");
   background-size: contain;
 }
 
 .menu a:nth-child(4) {
-  background-image: url("../img/menu/4.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/4.jpg");
   background-size: contain;
 }
 
 .menu a:nth-child(5) {
-  background-image: url("../img/menu/5.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/5.jpg");
   background-size: contain;
 }
 
 .menu a:nth-child(6) {
-  background-image: url("../img/menu/6.jpg");
+  background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/6.jpg");
   background-size: contain;
 }
 

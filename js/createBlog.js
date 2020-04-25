@@ -4,6 +4,7 @@ let $page = document.querySelector(".blog_page.wrap");
 let $newBlogs = document.querySelectorAll(".newblog");
 
 import page from "./Page.js";
+import { DateFormat } from "./utils.js";
 (function () {
   try {
     // 初始化page类的实例，让其有List
@@ -17,10 +18,7 @@ import page from "./Page.js";
       // 2. 给DOM相关的 赋值
       page.blogDoms = document.querySelectorAll(".blog.wrap");
       page.pageDoms = $page.children; //因为是引用的，所以后面添加了分页节点，也可以
-      page.changeDom = function () {
-        //先获取一次 当前页
-        let m = page.currentPage;
-
+      page.changeDom = function (m) {
         //添加 blog 数据(添加 5个)
         if (m !== undefined) {
           page.pageDoms[m].className = "page_icon page_true";
@@ -52,18 +50,16 @@ import page from "./Page.js";
       }
 
       //4. 执行添加blog数据的函数
-      page.changeDom();
+      page.changeDom(page.currentPage);
 
       //5. 执行添加侧边栏数据的函数
       for (let i = 0; i < 5; ++i) {
         $newBlogs[i].children[0].children[0].href = page.blogList[i].link;
         $newBlogs[i].children[0].children[0].innerText = page.blogList[i].title;
 
-        let dates = new Date(parseInt(page.blogList[i].date)).toLocaleDateString().split("/");
-        dates[1] = dates[1] < 10 ? "0" + dates[1] : dates[1];
-        dates[2] = dates[2] < 10 ? "0" + dates[2] : dates[2];
+        let dates = new Date(parseInt(page.blogList[i].date));
 
-        $newBlogs[i].children[1].innerText = dates.join("-");
+        $newBlogs[i].children[1].innerText = DateFormat(dates, "yyyy-MM-dd");
       }
     });
   } catch (err) {

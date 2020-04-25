@@ -96,7 +96,10 @@ $bc-color: rgb(255, 80, 80);
 
   border-radius: 6px;
   box-shadow: 0 0 5px white;
-  transition: box-shadow 0.5s;
+  opacity: 0;
+  transform: translateY(100px);
+
+  transition: box-shadow 0.5s, opacity 1s, transform 1s;
   &:hover {
     box-shadow: 0 0 20px black;
     .frame_head {
@@ -106,6 +109,10 @@ $bc-color: rgb(255, 80, 80);
       background-color: rgba(255, 255, 255, 0.8);
     }
   }
+}
+.pnm_frame.fade_move {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .frame_head {
