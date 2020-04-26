@@ -215,6 +215,10 @@
 
       //Bmob 会自动帮你在注册时查重，且对于email有格式要求
       function regsClick() {
+        if ($pwds[0].value !== $pwds[1].value) {
+          alert("两次输入的密码不一致");
+          return;
+        }
         let params = {
           username: $user.value,
           password: $pwds[0].value,
@@ -226,7 +230,18 @@
             location.href = "./index.html";
           })
           .catch(err => {
-            console.log(err);
+            switch (err.code) {
+              case 202:
+                alert("该用户已注册");
+                break;
+              case 203:
+                alert("该邮箱已注册");
+                break;
+              default:
+                console.log(err);
+                alert(err.error);
+                break;
+            }
           });
       }
     </script>

@@ -100,11 +100,21 @@
         <!-- *内容* -->
         <div class="main_content">
           <!-- 内容==公告 -->
-          <div class="wrap notice">
-            <p>
-              注意：该博客思路来自https://beats0.github.io/www.mygalgame.com/，很喜欢原作者的一些设计(比如右键🐍图)，咳咳~
+          <div class="wrap notice" style="font-size: 14px;">
+            <p style="color: #f00;">
+              注意：该站设计思路来自
+              <strong>https://beats0.github.io/www.mygalgame.com/</strong>
             </p>
-            <p>该博客github源码地址：https://github.com/pengnima/pnm_blog</p>
+            <p>github源码地址：https://github.com/pengnima/pnm_blog</p>
+            <p>
+              4.26日小结：最初想试着自己捣鼓捣鼓，所以想着就用原生试试，结果到现在感觉还行。
+              后面搭博客内容页面的话，还是用Vue吧，果然还是声明式编程舒服……
+            </p>
+            <p>
+              到目前为止首页部分还剩下 置顶按钮，搜索，留言(需要博客内容页面配合)
+              登录部分，由于没太整明白Bmob的文档的一些内容，如果要做感觉就很累赘了，所以登录目前还是以简单为主。
+              分页部分，单独封装成了一个类，再利用history的API做的，感觉像是SPA 0.0
+            </p>
             <br />
             <br />
           </div>
@@ -205,23 +215,23 @@
               </div>
             </div>
             <div class="frame_body">
-              <div class="newblog">
+              <div class="newblog list">
                 <span><a href="javascript:;"></a></span>
                 <span></span>
               </div>
-              <div class="newblog">
+              <div class="newblog list">
                 <span><a href="javascript:;"></a></span>
                 <span></span>
               </div>
-              <div class="newblog">
+              <div class="newblog list">
                 <span><a href="javascript:;"></a></span>
                 <span></span>
               </div>
-              <div class="newblog">
+              <div class="newblog list">
                 <span><a href="javascript:;"></a></span>
                 <span></span>
               </div>
-              <div class="newblog">
+              <div class="newblog list">
                 <span><a href="javascript:;"></a></span>
                 <span></span>
               </div>
@@ -253,7 +263,28 @@
                 <i class="fa fa-times-circle"></i>
               </div>
             </div>
-            <div class="frame_body"></div>
+            <div class="frame_body">
+              <div class="randomblog list">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="randomblog list">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="randomblog list">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="randomblog list">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+              <div class="randomblog list">
+                <span><a href="javascript:;"></a></span>
+                <span></span>
+              </div>
+            </div>
           </aside>
         </div>
       </div>

@@ -2,6 +2,7 @@ let $main_content = document.querySelector(".main_content");
 let $blog = document.querySelector(".blog.wrap");
 let $page = document.querySelector(".blog_page.wrap");
 let $newBlogs = document.querySelectorAll(".newblog");
+let $randomBlogs = document.querySelectorAll(".randomblog");
 
 import page from "./Page.js";
 import { DateFormat } from "./utils.js";
@@ -58,8 +59,23 @@ import { DateFormat } from "./utils.js";
         $newBlogs[i].children[0].children[0].innerText = page.blogList[i].title;
 
         let dates = new Date(parseInt(page.blogList[i].date));
-
         $newBlogs[i].children[1].innerText = DateFormat(dates, "yyyy-MM-dd");
+      }
+
+      let set = new Set();
+      for (let i = 0; i < 5; ++i) {
+        // 利用 set 不会重复，且有has可以判断是否重复的特性，来整随机数
+        let j = Math.floor(Math.random() * page.blen);
+        while (set.has(j)) {
+          j = Math.floor(Math.random() * page.blen);
+        }
+        set.add(j);
+
+        $randomBlogs[i].children[0].children[0].href = page.blogList[j].link;
+        $randomBlogs[i].children[0].children[0].innerText = page.blogList[j].title;
+
+        let dates = new Date(parseInt(page.blogList[j].date));
+        $randomBlogs[i].children[1].innerText = DateFormat(dates, "yyyy-MM-dd");
       }
     });
   } catch (err) {

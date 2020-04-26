@@ -16,7 +16,7 @@ $navBtn.addEventListener("click", function () {
 
 //3. 右键隐藏图============================================================
 // 随机选择图片
-let num = Math.floor(Math.random() * 22 + 1);
+let num = Math.floor(Math.random() * 30 + 1);
 let BG_URA_URL = "https://gitee.com/pengnima1/blogimage/raw/master/img/background_ura/";
 $bg_h.style.backgroundImage = `url('${BG_URA_URL}anime(${num}).jpg')`;
 
@@ -43,11 +43,13 @@ document.oncontextmenu = function (e) {
 
 $mask.onmousemove = function (e) {
   let ev = e || window.event;
+
   $bg_h.style.top = ev.clientY - 130 + "px";
   $bg_h.style.left = ev.clientX - 130 + "px";
 };
 
 //5. 前进后退 ===============================================================
+import page from "./Page.js";
 window.onpopstate = function () {
   page.pagePop = true;
 

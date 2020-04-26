@@ -175,6 +175,13 @@
   max-height: 300px;
 }
 
+.randomblog_frame .frame_body {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0px;
+  max-height: 300px;
+}
+
 .frame_body .form {
   display: flex;
   flex-direction: column;
@@ -353,7 +360,7 @@
           transform: translateY(5px);
 }
 
-.newblog {
+.list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -364,20 +371,20 @@
   transition: box-shadow 0.5s;
 }
 
-.newblog:hover {
+.list:hover {
   box-shadow: 0 0 20px #000;
 }
 
-.newblog span:nth-child(1) a {
+.list span:nth-child(1) a {
   font-size: 12.8px;
   color: black;
 }
 
-.newblog span:nth-child(1) a:hover {
+.list span:nth-child(1) a:hover {
   color: #ff5050;
 }
 
-.newblog span:nth-child(2) {
+.list span:nth-child(2) {
   font-size: 12.8px;
   color: white;
   background-color: #ff5050;

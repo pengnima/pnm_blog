@@ -88,9 +88,8 @@ body {
   box-shadow: 0 0 10px #222;
   border-radius: 50%;
 
-  background-image: none;
-  background-size: contain;
-  background-repeat: repeat;
+  // background-image: none;
+  background-size: cover;
   background-attachment: fixed; /* 有了该属性，底下的图片就不会随着父元素的移动而移动，也不会随着滚动条滚动而滚动 */
 }
 
