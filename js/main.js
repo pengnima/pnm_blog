@@ -90,3 +90,20 @@ function UpBody(el, link, img, detail) {
 
   newEl.children[1].innerText = detail + "……";
 }
+
+// 控制切换页面==========================================================
+$page.addEventListener("click", function (e) {
+  let ev = e || window.event;
+  let dom = ev.target;
+
+  if (dom.className.indexOf("fa-arrow-left") != -1) {
+    page.pre();
+    console.log(1);
+  } else if (dom.className.indexOf("fa-arrow-right") != -1) {
+    page.next();
+  } else {
+    if (Number(dom.innerText)) {
+      page.selectPage(dom.innerText);
+    }
+  }
+});

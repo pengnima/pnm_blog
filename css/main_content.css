@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.is_none {
-  display: none !important;
-}
-
 #main_body {
   padding-top: 20px;
 }

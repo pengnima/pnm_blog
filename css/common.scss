@@ -2,6 +2,10 @@ $screen-sm: 768px !default;
 $screen-md: 992px !default;
 $screen-lg: 1200px !default;
 
+.is_none {
+  display: none !important;
+}
+
 .container {
   padding-left: 10px;
   padding-right: 10px;
