@@ -60,12 +60,39 @@
         padding: 20px;
       }
       label {
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
 
         margin-bottom: 20px;
       }
+
+      .tip {
+        display: none;
+        padding: 4px 6px;
+        position: absolute;
+        top: -120%;
+        right: 0;
+        width: 30%;
+        border-radius: 6px;
+        background-color: rgba(200, 200, 200, 0.8);
+
+        font-size: 14px;
+        font-weight: bolder;
+      }
+      .tip::before {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+
+        border: 8px solid transparent;
+        border-top: 10px solid rgba(200, 200, 200, 0.8);
+
+        transform: translate(-50%, 50%) rotate(135deg);
+      }
+
       .frame_body i {
         width: 42px;
         height: 30px;
@@ -79,8 +106,6 @@
         border-bottom-left-radius: 6px;
       }
       .frame_body input {
-        /* font-size: ; */
-        /* flex: 1; */
         padding-left: 10px;
         padding-right: 10px;
         height: 28px;
@@ -90,6 +115,9 @@
         border-left: 0;
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
+      }
+      label input:focus + .tip {
+        display: block !important;
       }
       .regs_btn {
         outline: none;
@@ -185,15 +213,18 @@
         <div class="frame_body">
           <label>
             <i class="fa fa-user"></i>
-            <input id="user" type="text" placeholder="请输入用户名" />
+            <input id="user" type="text" placeholder="请输入用户名" autocomplete="off" />
+            <div class="tip">请输入3~6位汉字、字母、数字</div>
           </label>
           <label>
             <i class="fa fa-envelope"></i>
-            <input id="email" type="email" placeholder="请输入邮箱" />
+            <input id="email" type="email" placeholder="请输入邮箱" autocomplete="off" />
+            <div class="tip">请输入正确格式的邮箱</div>
           </label>
           <label>
             <i class="fa fa-lock"></i>
             <input class="pwd" type="password" placeholder="请输入密码" />
+            <div class="tip">请输入6~9位字符作为密码</div>
           </label>
           <label>
             <i class="fa fa-lock"></i>
@@ -213,12 +244,32 @@
       let $email = document.querySelector("#email");
       let $pwds = document.querySelectorAll(".pwd");
 
+      let user_reg = new RegExp(/^[\w|\u4e00-\u9fa5]{3,6}$/);
+      let email_reg = new RegExp(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/);
+      let pwd_reg = new RegExp(/^\w{6,9}$/);
+      function checkValue(value, reg) {
+        return reg.test(value);
+      }
+
       //Bmob 会自动帮你在注册时查重，且对于email有格式要求
       function regsClick() {
         if ($pwds[0].value !== $pwds[1].value) {
           alert("两次输入的密码不一致");
           return;
         }
+        if (!user_reg.test($user.value)) {
+          alert("用户名输入不规范");
+          return;
+        }
+        if (!email_reg.test($email.value)) {
+          alert("邮箱输入不规范");
+          return;
+        }
+        if (!pwd_reg.test($pwds[0].value)) {
+          alert("密码输入不规范");
+          return;
+        }
+
         let params = {
           username: $user.value,
           password: $pwds[0].value,
