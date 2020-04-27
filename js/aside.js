@@ -34,7 +34,7 @@ window.onresize = function () {
   htmlHeight = document.documentElement.clientHeight;
 };
 
-window.onscroll = function (e) {
+window.addEventListener("scroll", function () {
   let _top = document.body.scrollTop || document.documentElement.scrollTop;
 
   $pnms.forEach(item => {
@@ -44,7 +44,7 @@ window.onscroll = function (e) {
       item.classList.remove("fade_move");
     }
   });
-};
+});
 
 //2. 收起侧边栏，删除侧边栏===================================================
 let $vs_up = document.querySelectorAll(".fa-chevron-circle-up");

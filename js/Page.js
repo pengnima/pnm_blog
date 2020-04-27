@@ -19,6 +19,7 @@ class Page {
     this.changeDom = null; //该方法在 createBlog.js 中实现，会根据传入的 参数 改变页面内容
     this.blogDoms = null;
     this.pageDoms = null;
+    this.tags = [];
 
     // pagePop 用来判断是否要将页面 pushState()，如果是回退就不push
     this.pagePop = false;
@@ -33,11 +34,25 @@ class Page {
         this.blogList = list;
         this.blen = this.blogList.length;
         this.pageCount = Math.ceil(this.blen / 5);
+
+        this.tags = this.getTags();
+
         resolve();
       } catch (err) {
         reject(err);
       }
     });
+  }
+
+  getTags() {
+    let arr = [];
+    this.blogList.forEach(item => {
+      item.tags.forEach(tag => {
+        arr.push(tag);
+      });
+    });
+    arr = [...new Set(arr)];
+    return arr;
   }
   /* 利用 history 做单页跳转 */
   //选择某页

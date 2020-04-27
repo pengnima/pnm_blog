@@ -135,6 +135,18 @@ body {
   opacity: 1;
   transform: rotate(360deg) scale(1);
 }
+@keyframes menuOpen {
+  0% {
+    display: block;
+    opacity: 0;
+    transform: rotate(0) scale(0.1);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    transform: rotate(360deg) scale(1);
+  }
+}
 
 @for $i from 1 through 6 {
   .menu a:nth-child(#{$i}) {

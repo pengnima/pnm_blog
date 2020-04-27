@@ -344,6 +344,36 @@ body {
           transform: rotate(360deg) scale(1);
 }
 
+@-webkit-keyframes menuOpen {
+  0% {
+    display: block;
+    opacity: 0;
+    -webkit-transform: rotate(0) scale(0.1);
+            transform: rotate(0) scale(0.1);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes menuOpen {
+  0% {
+    display: block;
+    opacity: 0;
+    -webkit-transform: rotate(0) scale(0.1);
+            transform: rotate(0) scale(0.1);
+  }
+  100% {
+    display: block;
+    opacity: 1;
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
 .menu a:nth-child(1) {
   background-image: url("https://gitee.com/pengnima1/blogimage/raw/master/img/menu/1.jpg");
   background-size: contain;

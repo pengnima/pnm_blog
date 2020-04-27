@@ -156,7 +156,10 @@
         <div class="main_aside">
           <!-- 侧边栏==搜索 -->
           <aside class="search">
-            <input class="search_content" type="text" placeholder="" />
+            <div class="search_bar">
+              <input title="试着搜搜博客的tag" class="search_content" type="text" placeholder="" />
+              <ul></ul>
+            </div>
             <div class="sure_btn">
               <i class="fa fa-search"></i>
             </div>
@@ -303,12 +306,15 @@
       <a href="javascript:;" class="menu_icon">上一页</a>
     </div>
 
+    <div class="top_btn is_none"></div>
+
     <!-- ~脚本 -->
     <script src="./js/Bmob-2.2.4.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <script src="./js/login.js"></script>
     <script src="./js/other.js" type="module"></script>
     <script src="./js/aside.js"></script>
+    <script src="./js/search.js" type="module"></script>
 
     <script type="module"></script>
   </body>
