@@ -19,7 +19,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  z-index: -999;
+  z-index: -10;
   opacity: 0;
   -webkit-animation: bgSwiper 30s infinite linear;
           animation: bgSwiper 30s infinite linear;
@@ -93,7 +93,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  z-index: -999;
+  z-index: -10;
   opacity: 0;
   -webkit-animation: bgSwiper 30s infinite linear;
           animation: bgSwiper 30s infinite linear;
@@ -139,7 +139,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  z-index: -999;
+  z-index: -10;
   opacity: 0;
   -webkit-animation: bgSwiper 30s infinite linear;
           animation: bgSwiper 30s infinite linear;
@@ -185,7 +185,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  z-index: -999;
+  z-index: -10;
   opacity: 0;
   -webkit-animation: bgSwiper 30s infinite linear;
           animation: bgSwiper 30s infinite linear;
@@ -231,7 +231,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  z-index: -999;
+  z-index: -10;
   opacity: 0;
   -webkit-animation: bgSwiper 30s infinite linear;
           animation: bgSwiper 30s infinite linear;
@@ -285,6 +285,7 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: rgba(102, 102, 102, 0.6);
+  z-index: 111;
 }
 
 .bg_h {
@@ -314,6 +315,7 @@ body {
   transition-property: transform, opacity, visibility;
   transition-property: transform, opacity, visibility, -webkit-transform;
   transition-duration: 0.5s;
+  z-index: 111;
 }
 
 .menu a {

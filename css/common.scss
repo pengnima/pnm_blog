@@ -29,8 +29,8 @@ $screen-lg: 1200px !default;
 
 .top_btn {
   position: fixed;
-  bottom: 60px;
-  right: 60px;
+  bottom: 5%;
+  right: 5%;
   width: 42px;
   height: 42px;
   background-color: rgba(255, 85, 85, 0.6);
@@ -55,4 +55,12 @@ $screen-lg: 1200px !default;
 
     transform: translate(-50%, -50%) rotate(45deg);
   }
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none; //让canvas不会阻挡其他事件
+  z-index: 101;
 }

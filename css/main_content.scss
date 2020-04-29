@@ -13,6 +13,8 @@ $screen-lg: 1200px !default;
   padding-left: 16px;
   padding-right: 16px;
   margin-left: -32px;
+
+  // box-sizing: border-box;
 }
 
 @media screen and (max-width: $screen-sm) {
@@ -23,6 +25,7 @@ $screen-lg: 1200px !default;
   }
   .main_content {
     width: 100%;
+    padding: 0;
     margin-left: 0;
   }
 }

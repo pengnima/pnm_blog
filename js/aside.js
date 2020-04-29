@@ -1,4 +1,3 @@
-let $input = document.querySelector(".search_content");
 // 搜索框 placeholder 变动 =====================================================================
 let arr = [
   "人之初，性本善。性相近，习相远。",
@@ -21,7 +20,7 @@ let timer = setInterval(function () {
     }
   } else {
     let str = arr[r].substr(0, len);
-    $input.setAttribute("placeholder", str);
+    $search_cont.setAttribute("placeholder", str);
   }
   len++;
 }, 100);
@@ -30,8 +29,13 @@ let timer = setInterval(function () {
 let $pnms = document.querySelectorAll(".pnm_frame");
 let htmlHeight = document.documentElement.clientHeight;
 
+// 调整大小事件
 window.onresize = function () {
   htmlHeight = document.documentElement.clientHeight;
+
+  //修改画布
+  canvas.height = document.documentElement.clientHeight;
+  canvas.width = document.documentElement.clientWidth;
 };
 
 window.addEventListener("scroll", function () {

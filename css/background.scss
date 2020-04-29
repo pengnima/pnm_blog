@@ -27,7 +27,7 @@ body {
       background-attachment: fixed;
       background-size: cover;
       background-position: center center;
-      z-index: -999;
+      z-index: -10;
       opacity: 0;
       animation: bgSwiper 30s infinite linear;
       animation-delay: #{$i * 6 - 6}s;
@@ -76,6 +76,7 @@ body {
   height: 100%;
   overflow: hidden;
   background-color: rgba(102, 102, 102, 0.6);
+  z-index: 111;
 }
 .bg_h {
   position: relative;
@@ -106,6 +107,8 @@ body {
 
   transition-property: transform, opacity, visibility;
   transition-duration: 0.5s;
+
+  z-index: 111;
 
   a {
     position: absolute;

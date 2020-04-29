@@ -1,6 +1,6 @@
 .main_aside {
   flex: 1;
-  padding-left: 16px;
+  padding-left: 48px;
   padding-right: 16px;
   transition: align-self 0.5s;
 }
@@ -12,6 +12,7 @@
 @media screen and (max-width: 768px) {
   .main_aside {
     width: 100%;
+    padding: 0;
     padding-top: 20px;
   }
   .main_aside .search {
@@ -20,6 +21,8 @@
 }
 
 .search {
+  position: relative;
+  z-index: 100;
   width: 100%;
   height: 50px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -66,6 +69,7 @@
 }
 
 .search_bar {
+  outline: none;
   position: relative;
   margin-right: 6px;
   flex: 1;
@@ -78,7 +82,6 @@
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 999;
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
@@ -101,7 +104,6 @@
   box-sizing: border-box;
   color: #666;
   letter-spacing: 1px;
-  margin-right: 10px;
   padding: 4px 10px;
   border: 1px solid #ff5050;
   box-shadow: 0 0 6px #ff5050;

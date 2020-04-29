@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/main_aside.css" />
     <style>
       body {
+        width: 100%;
         margin: 0;
         padding: 0;
         background-color: #888;
@@ -156,7 +157,7 @@
         <div class="main_aside">
           <!-- 侧边栏==搜索 -->
           <aside class="search">
-            <div class="search_bar">
+            <div class="search_bar" tabindex="1">
               <input title="试着搜搜博客的tag" class="search_content" type="text" placeholder="" />
               <ul></ul>
             </div>
@@ -305,7 +306,7 @@
       <a href="javascript:;" class="menu_icon">资料</a>
       <a href="javascript:;" class="menu_icon">上一页</a>
     </div>
-
+    <canvas class="canvas"></canvas>
     <div class="top_btn is_none"></div>
 
     <!-- ~脚本 -->
@@ -313,6 +314,8 @@
     <script src="./js/main.js" type="module"></script>
     <script src="./js/login.js"></script>
     <script src="./js/other.js" type="module"></script>
+    <!-- 粒子动画先加载 -->
+    <script src="./js/particle.js"></script>
     <script src="./js/aside.js"></script>
     <script src="./js/search.js" type="module"></script>
 
