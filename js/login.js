@@ -1,12 +1,3 @@
-let $form = document.querySelector(".form");
-let $userframe = document.querySelector(".user_frame");
-let $username = document.querySelector(".user_frame .username");
-let $loginaside = document.querySelector(".login_frame .aside_icon");
-
-let $user = document.querySelector("#user");
-let $pwd = document.querySelector("#pwd");
-let $remeber = document.querySelector("#remeber");
-
 //登录等后台功能
 Bmob.initialize("7d0d37c291c33193", "123456");
 Bmob.debug(true);

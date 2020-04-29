@@ -1,9 +1,3 @@
-let $main_content = document.querySelector(".main_content");
-let $blog = document.querySelector(".blog.wrap");
-let $page = document.querySelector(".blog_page.wrap");
-let $newBlogs = document.querySelectorAll(".newblog");
-let $randomBlogs = document.querySelectorAll(".randomblog");
-
 import page from "./Page.js";
 import { DateFormat } from "./utils.js";
 (function () {
@@ -41,7 +35,7 @@ import { DateFormat } from "./utils.js";
       };
 
       //3. 创建 分页 节点
-      let $nextPage = document.querySelector(".fa-arrow-right");
+
       for (let i = 0; i < page.pageCount; ++i) {
         let text = document.createTextNode(i + 1);
         let dom = document.createElement("div");
@@ -106,20 +100,3 @@ function UpBody(el, link, img, detail) {
 
   newEl.children[1].innerText = detail + "……";
 }
-
-// 控制切换页面==========================================================
-$page.addEventListener("click", function (e) {
-  let ev = e || window.event;
-  let dom = ev.target;
-
-  if (dom.className.indexOf("fa-arrow-left") != -1) {
-    page.pre();
-    console.log(1);
-  } else if (dom.className.indexOf("fa-arrow-right") != -1) {
-    page.next();
-  } else {
-    if (Number(dom.innerText)) {
-      page.selectPage(dom.innerText);
-    }
-  }
-});

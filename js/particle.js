@@ -1,10 +1,11 @@
-let $search_cont = document.querySelector(".search_content");
 // 特效位置变量
 let $div = document.createElement("div");
 let $focus = document.createElement("span");
 let $text = document.createElement("span");
 let offset = elemOffset($search_cont); // 文本框在页面中的位置
 let focusOffset = { left: 0, top: 0 };
+let particles = []; //存放多个粒子组，每个粒子组有20个粒子
+let particleId = null; // Animeframe的ID，当多次输入时停止当前ID。
 
 $div.appendChild($text);
 $div.appendChild($focus);
@@ -19,15 +20,31 @@ $div.style.left = offset.left + "px"; //让 input 和 新创建的div重叠在�
 $div.style.top = offset.top + "px";
 
 // 画布变量
-let canvas = document.querySelector(".canvas");
-let html = document.documentElement;
-canvas.height = html.clientHeight;
-canvas.width = html.clientWidth;
-
+canvas.height = htmlHeight;
+canvas.width = htmlWidth;
 let ctx = canvas.getContext("2d");
 
-let particles = []; //存放多个粒子组，每个粒子组有20个粒子
-let id = null; // Animeframe的ID，当多次输入时停止当前ID。
+// 1. 根据搜索框的 输入 事件，执行 粒子动画效果
+$search_cont.addEventListener("input", function () {
+  offset = elemOffset($search_cont);
+  $div.style.left = offset.left + "px"; //让 input 和 新创建的div重叠在一起
+  $div.style.top = offset.top + "px";
+
+  let focus_index = $search_cont.selectionStart;
+  $text.innerText = $search_cont.value.substring(0, focus_index);
+  focusOffset = elemOffset($focus);
+
+  if (focusOffset.left > offset.left + offset.width) {
+    focusOffset.left = offset.left + offset.width - 20;
+  }
+
+  // 有id就停止上一个粒子动画，不停止的话，前一个会影响下一个动画，会鬼畜加快
+  if (particleId) {
+    window.cancelAnimationFrame(particleId);
+  }
+  createParticles(~~focusOffset.left, ~~focusOffset.top);
+  drawParticles();
+});
 
 // 创建粒子
 function createParticles(posx, posy) {
@@ -93,7 +110,7 @@ function drawParticles() {
   }
 
   if (particles.length != 0) {
-    id = window.requestAnimationFrame(() => {
+    particleId = window.requestAnimationFrame(() => {
       drawParticles();
     });
   }
