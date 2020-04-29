@@ -35,7 +35,6 @@ import { DateFormat } from "./utils.js";
       };
 
       //3. 创建 分页 节点
-
       for (let i = 0; i < page.pageCount; ++i) {
         let text = document.createTextNode(i + 1);
         let dom = document.createElement("div");
@@ -71,6 +70,8 @@ import { DateFormat } from "./utils.js";
         let dates = new Date(parseInt(page.blogList[j].date));
         $randomBlogs[i].children[1].innerText = DateFormat(dates, "yyyy-MM-dd");
       }
+
+      //6.
     });
   } catch (err) {
     console.log(err);

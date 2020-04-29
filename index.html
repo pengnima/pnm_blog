@@ -291,6 +291,16 @@
               </div>
             </div>
           </aside>
+
+          <aside class="tags_frame pnm_frame fade_move">
+            <div class="frame_head">
+              <span class="is_select">热门标签</span>
+              <span>友情链接</span>
+            </div>
+            <div class="frame_body">
+              <div class="popular_tags"></div>
+            </div>
+          </aside>
         </div>
       </div>
     </div>
@@ -322,6 +332,25 @@
     <script src="./js/particle.js"></script>
     <script src="./js/search.js" type="module"></script>
 
-    <script type="module"></script>
+    <script type="module">
+      import page from "./js/Page.js";
+      let popularTags = document.querySelector(".popular_tags");
+      let tempId = null;
+      let createPopular = () => {
+        if (page.tags.length != 0) {
+          for (let i = 0; i < page.tags.length; ++i) {
+            let aNode = document.createElement("a");
+            aNode.href = "javascript:;";
+            let tNode = document.createTextNode(page.tags[i]);
+            aNode.appendChild(tNode);
+            popularTags.appendChild(aNode);
+          }
+          window.cancelAnimationFrame(tempId);
+        } else {
+          tempId = window.requestAnimationFrame(createPopular);
+        }
+      };
+      createPopular();
+    </script>
   </body>
 </html>
