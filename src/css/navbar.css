@@ -109,6 +109,7 @@ a {
   width: 150%;
   max-height: 0;
   transition: max-height 0.5s;
+  z-index: 10;
 }
 
 .nav_item .nav_mask a {

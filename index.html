@@ -97,10 +97,40 @@
               注意：该站设计思路来自
               <strong>https://beats0.github.io/www.mygalgame.com/</strong>
             </p>
-            <p>github源码地址：https://github.com/pengnima/pnm_blog</p>
             <p>
-              4.26日小结：最初想试着自己捣鼓捣鼓，所以想着就用原生试试，结果到现在感觉还行。
-              后面搭博客内容页面的话，还是用Vue吧，果然还是声明式编程舒服……
+              github源码地址：<span style="color: #f00;">https://github.com/pengnima/pnm_blog</span>
+            </p>
+            <p style="font-size: 13px; text-indent: 14px;">
+              <strong><span style="color: #f55;">NavBar部分：</span></strong>
+              博客名聚光灯效果关键在于
+              <strong>clip-path</strong>
+              ，将文字剪切成圆形（另也可以用<strong>background-clip</strong>做渐变效果），且用了媒体查询与flex配合，做了响应式处理，在移动端平台上显示效果会改变。
+            </p>
+            <p style="font-size: 13px; text-indent: 14px;">
+              <strong><span style="color: #f55;">主题左侧部分：</span></strong>
+              博客资料文件存放于 json 文件里，通过 fetch 来获取所需资料。
+            </p>
+            <p style="font-size: 13px; text-indent: 14px;">
+              <strong><span style="color: #f55;">分页部分：</span></strong>
+              创建Page类，通过HTML5的<strong> history.pushState() </strong
+              >来决定页面，但实际上pushState并不会刷新页面，真正改变的只是blog的DOM元素。也因此在历史记录前进后退时遇到了小Bug，得多新增了2个属性解决问题。
+            </p>
+            <p style="font-size: 13px; text-indent: 14px;">
+              <strong><span style="color: #f55;">搜索框部分：</span></strong>
+              通过JS循环<strong> placeholder </strong>实现动态提示语。
+              动态搜索则是通过对比输入的value创建 对应的 Tag子元素 实现。粒子特效通过<strong>
+                canvas </strong
+              >实现，粒子的飘动效果利用了 弧度，三角函数<strong>
+                (random(0, 360) * Math.PI) / 180 </strong
+              >三角函数让其x和y轴上的角度更有随意的感觉。比较烦的是随时确定当前输入的光标所在的像素位，这里利用一个假DOM与输入框重叠，假DOM内有2个
+              inline 子元素，第一个子元素 innerText 获取 0
+              到当前光标这段范围内所输入的字符，第二个子元素的与视窗之间的距离，便是当前光标所处的象数位。通过该<strong>
+                getBoundingClientRect(elem) </strong
+              >获取。
+            </p>
+            <p style="font-size: 13px; text-indent: 14px;">
+              <strong><span style="color: #f55;">登录注册部分：</span></strong>
+              具体后端实现交给了Bmob云后端。调用其接口实现效果。（没有做记住密码，都按登录一次后的2小时内免输入登录）
             </p>
             <p>
               捣鼓捣鼓~

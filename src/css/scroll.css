@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /*滚动条样式*/
 body::-webkit-scrollbar,
-.nav_bar::-webkit-scrollbar {
+.nav_bar::-webkit-scrollbar,
+.notice::-webkit-scrollbar {
   /*滚动条整体样式*/
   width: 6px;
   /*高宽分别对应横竖滚动条的尺寸*/
@@ -9,7 +10,8 @@ body::-webkit-scrollbar,
 }
 
 body::-webkit-scrollbar-thumb,
-.nav_bar::-webkit-scrollbar-thumb {
+.nav_bar::-webkit-scrollbar-thumb,
+.notice::-webkit-scrollbar-thumb {
   /*滚动条里面小方块*/
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
@@ -17,7 +19,8 @@ body::-webkit-scrollbar-thumb,
 }
 
 body::-webkit-scrollbar-track,
-.nav_bar::-webkit-scrollbar-track {
+.nav_bar::-webkit-scrollbar-track,
+.notice::-webkit-scrollbar-track {
   /*滚动条里面轨道*/
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
   border-radius: 0;

@@ -81,11 +81,14 @@ function effect(particle, index) {
     particle[i].vx *= particle[i].drag;
     particle[i].vy *= particle[i].drag;
 
-    // 旋转弧度
+    // 旋转弧度(加速度+旋转度)
     particle[i].theta += random(-0.5, 0.5);
     particle[i].vx += Math.sin(particle[i].theta) * 0.1;
     particle[i].vy += Math.cos(particle[i].theta) * 0.1;
 
+    // let temp = random(-0.1, 0.1);
+    // particle[i].vx += temp;
+    // particle[i].vy += temp;
     // 大小
     particle[i].size *= 0.96;
 

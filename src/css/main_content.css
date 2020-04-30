@@ -41,6 +41,8 @@
 
 .notice {
   position: relative;
+  height: 200px;
+  overflow: auto;
   /* 断单词句 */
   word-wrap: break-word;
 }

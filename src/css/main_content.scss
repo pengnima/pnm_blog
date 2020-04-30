@@ -46,6 +46,8 @@ $screen-lg: 1200px !default;
 }
 .notice {
   position: relative;
+  height: 200px;
+  overflow: auto;
   /* 断单词句 */
   word-wrap: break-word;
   // word-break: break-all;
@@ -55,10 +57,17 @@ $screen-lg: 1200px !default;
     right: 10px;
     cursor: pointer;
   }
+
+  // &:hover ~ .blog {
+  //   top: 0;
+  // }
 }
 // ================== 每一项博客 ============================================
 .blog {
   position: relative;
+  // top: -300px;
+  // transition: all 0.5s;
+  // transform: translateY(-300px);
   &:hover {
     background-color: transparent;
   }
