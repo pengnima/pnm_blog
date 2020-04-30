@@ -1,4 +1,7 @@
 import page from "./Page.js";
+let $tagsFrameHead = document.querySelector(".tags_frame .frame_head");
+let $tagsFrameBody = document.querySelector(".tags_frame .frame_body");
+let $popularTags = document.querySelector(".popular_tags");
 
 let tempId = null;
 let createPopular = () => {
@@ -9,7 +12,7 @@ let createPopular = () => {
       aNode.style.fontSize = 16 * (Math.random() + 0.6).toFixed(2) + "px";
       let tNode = document.createTextNode(page.tags[i]);
       aNode.appendChild(tNode);
-      popularTags.appendChild(aNode);
+      $popularTags.appendChild(aNode);
     }
     window.cancelAnimationFrame(tempId);
   } else {
@@ -23,7 +26,7 @@ createPopular();
 let preIndex = 0;
 let nowIndex = 0;
 toggleIndex(preIndex, nowIndex);
-tagsFrameHead.addEventListener("click", function (e) {
+$tagsFrameHead.addEventListener("click", function (e) {
   let ev = e || window.event;
   let preNode = e.target.previousElementSibling;
 
@@ -38,9 +41,9 @@ tagsFrameHead.addEventListener("click", function (e) {
 });
 
 function toggleIndex(pre, now) {
-  tagsFrameHead.children[pre].classList.remove("is_select");
-  tagsFrameHead.children[now].classList.add("is_select");
+  $tagsFrameHead.children[pre].classList.remove("is_select");
+  $tagsFrameHead.children[now].classList.add("is_select");
 
-  tagsFrameBody.children[pre].classList.remove("is_show");
-  tagsFrameBody.children[now].classList.add("is_show");
+  $tagsFrameBody.children[pre].classList.remove("is_show");
+  $tagsFrameBody.children[now].classList.add("is_show");
 }

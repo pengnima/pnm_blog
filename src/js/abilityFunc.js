@@ -1,4 +1,14 @@
 import page from "./Page.js";
+let $mask = document.querySelector(".mask_bg"); // 定位mask
+let $bg_h = document.querySelector(".bg_h"); // 隐藏背景图
+let $menu = document.querySelector(".menu"); //右键菜单
+
+let $topBtn = document.querySelector(".top_btn");
+
+let $search_cont = document.querySelector(".search_content"); // 侧边栏搜索框
+
+let BG_NUM = Math.floor(Math.random() * 30 + 1);
+let BG_URA_URL = "https://gitee.com/pengnima1/blogimage/raw/master/img/background_ura/";
 
 //1. 右键隐藏图 =====================================================================
 (function () {

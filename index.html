@@ -3,28 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My博客</title>
+    <title>彭尼玛の勃客</title>
 
     <link
       href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/scroll.css" />
-    <link rel="stylesheet" href="./css/navbar.css" />
-    <link rel="stylesheet" href="./css/background.css" />
-    <link rel="stylesheet" href="./css/main_content.css" />
-    <link rel="stylesheet" href="./css/main_aside.css" />
-    <style>
-      body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: #888;
-
-        overflow-x: hidden;
-      }
-    </style>
+    <link rel="stylesheet" href="./src/css/common.css" />
+    <link rel="stylesheet" href="./src/css/scroll.css" />
+    <link rel="stylesheet" href="./src/css/navbar.css" />
+    <link rel="stylesheet" href="./src/css/background.css" />
+    <link rel="stylesheet" href="./src/css/main_content.css" />
+    <link rel="stylesheet" href="./src/css/main_aside.css" />
   </head>
   <body>
     <!-- ~导航栏 -->
@@ -102,6 +92,7 @@
         <div class="main_content">
           <!-- 内容==公告 -->
           <div class="wrap notice" style="font-size: 14px;">
+            <i class="fa fa-times-circle"></i>
             <p style="color: #f00;">
               注意：该站设计思路来自
               <strong>https://beats0.github.io/www.mygalgame.com/</strong>
@@ -192,14 +183,14 @@
                   <a href="javascript:;">忘记密码?</a>
                 </div>
                 <div class="l_a_s">
-                  <button onclick="loginClick()">登录</button>
+                  <button>登录</button>
                   <a href="./register.html">注册</a>
                 </div>
               </div>
               <div class="user_frame is_none">
                 <div class="userhead"></div>
                 <div class="username">******</div>
-                <button onclick="loginOut()">退出登录</button>
+                <button>退出登录</button>
               </div>
             </div>
           </aside>
@@ -326,17 +317,15 @@
     <div class="top_btn is_none"></div>
 
     <!-- ~脚本 -->
-    <script src="./js/Bmob-2.2.4.min.js"></script>
-    <script src="./js/variable.js"></script>
-    <script src="./js/eventFunc.js" type="module"></script>
-    <script src="./js/abilityFunc.js" type="module"></script>
 
-    <script src="./js/main.js" type="module"></script>
-    <script src="./js/login.js"></script>
-    <!-- 粒子动画先加载 -->
-    <script src="./js/particle.js"></script>
-    <script src="./js/search.js" type="module"></script>
-
-    <script src="./js/togglePopular.js" type="module"></script>
+    <!-- <script src="./js/Bmob-2.2.4.min.js"></script> -->
+    <script src="./src/js/Bmob-2.2.4.min.js"></script>
+    <script src="./src/js/eventFunc.js" type="module"></script>
+    <script src="./src/js/abilityFunc.js" type="module"></script>
+    <script src="./src/js/main.js" type="module"></script>
+    <script src="./src/js/login.js" type="module"></script>
+    <script src="./src/js/particle.js"></script>
+    <script src="./src/js/search.js" type="module"></script>
+    <script src="./src/js/togglePopular.js" type="module"></script>
   </body>
 </html>

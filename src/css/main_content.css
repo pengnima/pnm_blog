@@ -40,8 +40,16 @@
 }
 
 .notice {
+  position: relative;
   /* 断单词句 */
   word-wrap: break-word;
+}
+
+.notice i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
 .blog {

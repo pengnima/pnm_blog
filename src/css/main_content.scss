@@ -45,9 +45,16 @@ $screen-lg: 1200px !default;
   }
 }
 .notice {
+  position: relative;
   /* 断单词句 */
   word-wrap: break-word;
   // word-break: break-all;
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
 }
 // ================== 每一项博客 ============================================
 .blog {

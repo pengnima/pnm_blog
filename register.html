@@ -9,10 +9,10 @@
       href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/scroll.css" />
-    <link rel="stylesheet" href="./css/navbar.css" />
-    <link rel="stylesheet" href="./css/background.css" />
+    <link rel="stylesheet" href="./src/css/common.css" />
+    <link rel="stylesheet" href="./src/css/scroll.css" />
+    <link rel="stylesheet" href="./src/css/navbar.css" />
+    <link rel="stylesheet" href="./src/css/background.css" />
     <style>
       body {
         margin: 0;
@@ -236,10 +236,11 @@
     </div>
 
     <!-- ~脚本 -->
-    <script src="./js/Bmob-2.2.4.min.js"></script>
+    <!-- <script src="./js/Bmob-2.2.4.min.js"></script> -->
+    <script src="./src/js/Bmob-2.2.4.min.js"></script>
     <script>
       Bmob.initialize("7d0d37c291c33193", "123456");
-      Bmob.debug(true);
+      // Bmob.debug(true);
       let $user = document.querySelector("#user");
       let $email = document.querySelector("#email");
       let $pwds = document.querySelectorAll(".pwd");

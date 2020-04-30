@@ -1,5 +1,8 @@
 import page from "./Page.js";
 let shakeTime, last_time;
+let $search = document.querySelector(".search");
+let $search_ul = document.querySelector(".search_bar ul");
+let $search_cont = document.querySelector(".search_content"); // 侧边栏搜索框
 
 $search_cont.addEventListener("input", function () {
   //输入前都要给震动效果赋初始值

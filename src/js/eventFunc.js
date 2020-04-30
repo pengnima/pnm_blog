@@ -1,4 +1,16 @@
 import page from "./Page.js";
+let canvas = document.querySelector(".canvas"); //画布
+
+let $navBtn = document.querySelector(".nav_button"); //缩小宽度后的按钮
+let $bar = document.querySelector(".nav_bar"); // 导航栏选项
+let $pnms = document.querySelectorAll(".pnm_frame"); //侧边栏的每一个 关键框
+let $vs_up = document.querySelectorAll(".fa-chevron-circle-up"); //侧边栏的每一个框head的按钮
+let $cancle = document.querySelectorAll(".fa-times-circle");
+
+let $page = document.querySelector(".blog_page.wrap"); // 分页外框
+
+let htmlHeight = document.documentElement.clientHeight;
+let htmlWidth = document.documentElement.clientWidth;
 // 点击事件 ==============================================================================================
 /**
  * 导航栏点击
@@ -36,8 +48,15 @@ $vs_up.forEach(item => {
 
 $cancle.forEach(item => {
   item.addEventListener("click", function () {
+    if (Array.prototype.indexOf.call(this.parentNode.classList, "notice") != -1) {
+      this.parentNode.style.display = "none";
+    }
+
     let itemParent = this.parentNode.parentNode.parentNode;
-    itemParent.style.display = "none";
+    // classList 非 真数组，所以用 原型来call他
+    if (Array.prototype.indexOf.call(itemParent.classList, "pnm_frame") != -1) {
+      itemParent.style.display = "none";
+    }
   });
 });
 

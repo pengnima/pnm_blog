@@ -1,3 +1,5 @@
+let canvas = document.querySelector(".canvas"); //画布
+let $search_cont = document.querySelector(".search_content"); // 侧边栏搜索框
 // 特效位置变量
 let $div = document.createElement("div");
 let $focus = document.createElement("span");
@@ -6,6 +8,9 @@ let offset = elemOffset($search_cont); // 文本框在页面中的位置
 let focusOffset = { left: 0, top: 0 };
 let particles = []; //存放多个粒子组，每个粒子组有20个粒子
 let particleId = null; // Animeframe的ID，当多次输入时停止当前ID。
+
+let htmlHeight = document.documentElement.clientHeight;
+let htmlWidth = document.documentElement.clientWidth;
 
 $div.appendChild($text);
 $div.appendChild($focus);

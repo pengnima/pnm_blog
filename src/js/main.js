@@ -1,5 +1,14 @@
 import page from "./Page.js";
 import { DateFormat } from "./utils.js";
+let $newBlogs = document.querySelectorAll(".newblog");
+let $randomBlogs = document.querySelectorAll(".randomblog");
+
+let $main_content = document.querySelector(".main_content"); //主栏框
+let $blog = document.querySelector(".blog.wrap"); // 第一个 blog 框(用来复制成其他框)
+let $page = document.querySelector(".blog_page.wrap"); // 分页外框
+let $nextPage = document.querySelector(".fa-arrow-right"); // 分页 下一个 按钮框
+
+const BLOG_IMAGE_URL = "https://gitee.com/pengnima1/blogimage/raw/master/img/blog_image/";
 (function () {
   try {
     // 初始化page类的实例，让其有List
@@ -96,7 +105,7 @@ function UpBody(el, link, img, detail) {
   let newEl = el.children[0].children[0];
   newEl.setAttribute("href", link);
   if (img != "") {
-    newEl.children[0].setAttribute("src", img);
+    newEl.children[0].setAttribute("src", BLOG_IMAGE_URL + img);
   }
 
   newEl.children[1].innerText = detail + "……";
