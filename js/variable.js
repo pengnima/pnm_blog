@@ -40,9 +40,14 @@ let $loginaside = document.querySelector(".login_frame .aside_icon"); //因为�
 let $userframe = document.querySelector(".user_frame"); //登录成功后的用户框
 let $username = document.querySelector(".user_frame .username");
 
-/* ———— 最新框、随机框 */
+/* ———— 最新框、随机框的每个项目 */
 let $newBlogs = document.querySelectorAll(".newblog");
 let $randomBlogs = document.querySelectorAll(".randomblog");
+
+/* ———— 标签框 */
+let tagsFrameHead = document.querySelector(".tags_frame .frame_head");
+let tagsFrameBody = document.querySelector(".tags_frame .frame_body");
+let popularTags = document.querySelector(".popular_tags");
 
 /**
  * 5. 主栏框框

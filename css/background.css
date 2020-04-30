@@ -30,13 +30,9 @@ body {
 @-webkit-keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -47,8 +43,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;
@@ -58,13 +54,9 @@ body {
 @keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -75,8 +67,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;
@@ -104,13 +96,9 @@ body {
 @keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -121,8 +109,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;
@@ -150,13 +138,9 @@ body {
 @keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -167,8 +151,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;
@@ -196,13 +180,9 @@ body {
 @keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -213,8 +193,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;
@@ -242,13 +222,9 @@ body {
 @keyframes bgSwiper {
   0% {
     opacity: 0;
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
   }
   4% {
     opacity: 1;
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
@@ -259,8 +235,8 @@ body {
   }
   25% {
     opacity: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   100% {
     opacity: 0;

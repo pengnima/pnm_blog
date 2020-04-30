@@ -112,9 +112,7 @@
               后面搭博客内容页面的话，还是用Vue吧，果然还是声明式编程舒服……
             </p>
             <p>
-              到目前为止首页部分还剩下 置顶按钮，搜索，留言(需要博客内容页面配合)
-              登录部分，由于没太整明白Bmob的文档的一些内容，如果要做感觉就很累赘了，所以登录目前还是以简单为主。
-              分页部分，单独封装成了一个类，再利用history的API做的，感觉像是SPA 0.0
+              捣鼓捣鼓~
             </p>
             <br />
             <br />
@@ -298,7 +296,14 @@
               <span>友情链接</span>
             </div>
             <div class="frame_body">
-              <div class="popular_tags"></div>
+              <div class="popular_tags is_show"></div>
+              <div class="friend_links">
+                <a href="https://github.com/pengnima">我的github</a>
+                <a href="https://www.bilibili.com/"
+                  >全国最大<span style="color: #f55; font-weight: bolder;">同性</span>交友网站</a
+                >
+                <a href="https://baidu.com/">***</a>
+              </div>
             </div>
           </aside>
         </div>
@@ -332,25 +337,6 @@
     <script src="./js/particle.js"></script>
     <script src="./js/search.js" type="module"></script>
 
-    <script type="module">
-      import page from "./js/Page.js";
-      let popularTags = document.querySelector(".popular_tags");
-      let tempId = null;
-      let createPopular = () => {
-        if (page.tags.length != 0) {
-          for (let i = 0; i < page.tags.length; ++i) {
-            let aNode = document.createElement("a");
-            aNode.href = "javascript:;";
-            let tNode = document.createTextNode(page.tags[i]);
-            aNode.appendChild(tNode);
-            popularTags.appendChild(aNode);
-          }
-          window.cancelAnimationFrame(tempId);
-        } else {
-          tempId = window.requestAnimationFrame(createPopular);
-        }
-      };
-      createPopular();
-    </script>
+    <script src="./js/togglePopular.js" type="module"></script>
   </body>
 </html>

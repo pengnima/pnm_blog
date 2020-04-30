@@ -18,6 +18,8 @@ if (localStorage.getItem("bmob")) {
         console.log("匹配且没过期");
         // 登录成功
         loginSuccess(res.username);
+      } else {
+        localStorage.removeItem("bmob");
       }
     });
   })();
