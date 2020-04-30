@@ -49,7 +49,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from: "./src/json",
+        from: "./json",
         to: "./json",
       },
       {
