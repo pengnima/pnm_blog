@@ -48,7 +48,7 @@ $vs_up.forEach(item => {
 
 $cancle.forEach(item => {
   item.addEventListener("click", function () {
-    if (Array.prototype.indexOf.call(this.parentNode.classList, "notice") != -1) {
+    if (this.parentNode.classList.value.indexOf("notice") != -1) {
       this.parentNode.style.display = "none";
     }
 

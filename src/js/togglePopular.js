@@ -28,7 +28,7 @@ let nowIndex = 0;
 toggleIndex(preIndex, nowIndex);
 $tagsFrameHead.addEventListener("click", function (e) {
   let ev = e || window.event;
-  let preNode = e.target.previousElementSibling;
+  let preNode = ev.target.previousElementSibling;
 
   preIndex = nowIndex;
   nowIndex = 0;
